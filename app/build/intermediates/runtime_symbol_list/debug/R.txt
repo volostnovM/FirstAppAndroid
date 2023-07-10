@@ -1272,6 +1272,7 @@ int color foreground_material_dark 0x7f05005b
 int color foreground_material_light 0x7f05005c
 int color highlighted_text_material_dark 0x7f05005d
 int color highlighted_text_material_light 0x7f05005e
+int color ic_launcher_background 0x7f05024e
 int color m3_appbar_overlay_color 0x7f05005f
 int color m3_assist_chip_icon_tint_color 0x7f050060
 int color m3_assist_chip_stroke_color 0x7f050061
@@ -2446,7 +2447,6 @@ int drawable design_password_eye 0x7f070063
 int drawable design_snackbar_background 0x7f070064
 int drawable ic_clock_black_24dp 0x7f070065
 int drawable ic_keyboard_black_24dp 0x7f070066
-int drawable ic_launcher_background 0x7f070067
 int drawable ic_launcher_foreground 0x7f070068
 int drawable ic_m3_chip_check 0x7f070069
 int drawable ic_m3_chip_checked_circle 0x7f07006a
@@ -3273,6 +3273,7 @@ int string mtrl_picker_toggle_to_day_selection 0x7f0e0079
 int string mtrl_picker_toggle_to_text_input_mode 0x7f0e007a
 int string mtrl_picker_toggle_to_year_selection 0x7f0e007b
 int string mtrl_timepicker_confirm 0x7f0e007c
+int string nmedia 0x7f0e0084
 int string password_toggle_content_description 0x7f0e007d
 int string path_password_eye 0x7f0e007e
 int string path_password_eye_mask_strike_through 0x7f0e007f
