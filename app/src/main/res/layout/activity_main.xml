@@ -77,11 +77,12 @@
         app:barrierDirection="bottom"
         app:constraint_referenced_ids="content" />
 
-    <ImageView
-        android:id="@+id/iconLike"
+    <ImageButton
+        android:id="@+id/likeButton"
         android:layout_width="@dimen/size_icon"
         android:layout_height="@dimen/size_icon"
         android:layout_marginTop="@dimen/common_padding"
+        android:contentDescription="@string/icon_like"
         android:src="@drawable/baseline_favorite_border_24"
         app:layout_constraintTop_toBottomOf="@id/barrierBottomContent" />
 
@@ -90,30 +91,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/icon_padding"
-        app:layout_constraintBottom_toBottomOf="@id/iconLike"
-        app:layout_constraintStart_toEndOf="@id/iconLike"
-        app:layout_constraintTop_toTopOf="@id/iconLike"
+        app:layout_constraintBottom_toBottomOf="@id/likeButton"
+        app:layout_constraintStart_toEndOf="@id/likeButton"
+        app:layout_constraintTop_toTopOf="@id/likeButton"
         tools:text="@sample/posts.json/data/like" />
 
-    <ImageView
-        android:id="@+id/iconShare"
+    <ImageButton
+        android:id="@+id/shareButton"
         android:layout_width="@dimen/size_icon"
         android:layout_height="@dimen/size_icon"
-        android:layout_marginTop="@dimen/common_padding"
-        android:src="@drawable/baseline_share_24"
-        app:layout_constraintTop_toBottomOf="@id/barrierBottomContent"
-        app:layout_constraintStart_toEndOf="@id/likeText"
         android:layout_marginStart="@dimen/common_padding"
-        />
+        android:layout_marginTop="@dimen/common_padding"
+        android:contentDescription="@string/icon_share"
+        android:src="@drawable/baseline_share_24"
+        app:layout_constraintStart_toEndOf="@id/likeText"
+        app:layout_constraintTop_toBottomOf="@id/barrierBottomContent" />
 
     <TextView
         android:id="@+id/shareText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/icon_padding"
-        app:layout_constraintBottom_toBottomOf="@id/iconShare"
-        app:layout_constraintStart_toEndOf="@id/iconShare"
-        app:layout_constraintTop_toTopOf="@id/iconShare"
+        app:layout_constraintBottom_toBottomOf="@id/shareButton"
+        app:layout_constraintStart_toEndOf="@id/shareButton"
+        app:layout_constraintTop_toTopOf="@id/shareButton"
         tools:text="@sample/posts.json/data/shared" />
 
     <TextView
@@ -121,21 +122,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/icon_padding"
+        app:layout_constraintBottom_toBottomOf="@id/viewButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iconView"
-        app:layout_constraintBottom_toBottomOf="@id/iconView"
+        app:layout_constraintTop_toTopOf="@id/viewButton"
         tools:text="@sample/posts.json/data/views" />
 
-    <ImageView
-        android:id="@+id/iconView"
+    <ImageButton
+        android:id="@+id/viewButton"
         android:layout_width="@dimen/size_icon"
         android:layout_height="@dimen/size_icon"
         android:layout_marginTop="@dimen/common_padding"
-        android:src="@drawable/baseline_share_24"
         android:layout_marginEnd="@dimen/icon_padding"
-        app:layout_constraintTop_toTopOf="@id/barrierBottomContent"
+        android:contentDescription="@string/icon_view"
+        android:src="@drawable/baseline_share_24"
         app:layout_constraintEnd_toStartOf="@id/viewText"
-        />
+        app:layout_constraintTop_toTopOf="@id/barrierBottomContent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
