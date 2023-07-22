@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="avatar_size">48dp</dimen>
+    <dimen name="common_padding">16dp</dimen>
+    <dimen name="icon_padding">8dp</dimen>
+    <dimen name="size_icon">24dp</dimen>
+    <string name="app_name">FirstProject</string>
+    <string name="avatar">avatar</string>
+    <string name="icon_like">icon like</string>
+    <string name="icon_share">icon share</string>
+    <string name="icon_view">icon view</string>
+    <string name="menu">menu</string>
+    <string name="nmedia">NMedia!</string>
+    <style name="Base.Theme.FirstProject" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.FirstProject" parent="Base.Theme.FirstProject"/>
+</resources>
