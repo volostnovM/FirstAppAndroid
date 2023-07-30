@@ -22,11 +22,13 @@ id likeButton
 id likeText
 id menu
 id published
+id recyclerList
 id shareButton
 id shareText
 id viewButton
 id viewText
 layout activity_main
+layout card_post
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
