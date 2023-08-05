@@ -1212,6 +1212,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -2439,6 +2440,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_favorite_border_24
 drawable baseline_more_vert_24
+drawable baseline_save_alt_48
 drawable baseline_share_24
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2453,7 +2455,9 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_cancel_48
 drawable ic_clock_black_24dp
+drawable ic_edit_24
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
 drawable ic_like_24
@@ -2601,6 +2605,8 @@ id autoCompleteToStart
 id avatar
 id barrier
 id barrierBottomContent
+id barrierEdit
+id barrierSave
 id barrierTop
 id baseline
 id beginOnFirstDraw
@@ -2615,6 +2621,7 @@ id bounceStart
 id buttonPanel
 id cache_measures
 id callMeasure
+id cancelButton
 id cancel_button
 id carryVelocity
 id center
@@ -2686,6 +2693,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id edit
 id edit_query
 id elastic
 id end
@@ -2712,6 +2720,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id group
 id group_divider
 id grouping
 id groups
@@ -2723,6 +2732,7 @@ id homeAsUp
 id honorRequest
 id horizontal_only
 id icon
+id icon_edit
 id icon_group
 id ifRoom
 id ignore
@@ -2853,6 +2863,7 @@ id radio
 id ratio
 id rectangles
 id recyclerList
+id remove
 id report_drawn
 id reverseSawtooth
 id right
@@ -2861,6 +2872,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2919,6 +2931,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id status_edit
 id stop
 id stretch
 id submenuarrow
@@ -2952,6 +2965,7 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_netology
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3173,6 +3187,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu menu_options
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -3214,12 +3229,15 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string edit_message
+string error_empty_content
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string icon_edit
 string icon_like
 string icon_share
 string icon_view
@@ -3270,6 +3288,8 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string menu
+string menu_edit
+string menu_remove
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -3312,8 +3332,10 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string post_text
 string search_menu_title
 string status_bar_notification_info_overflow
+string text_netology
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

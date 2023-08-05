@@ -4,9 +4,15 @@ package ru.netology.nmedia.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.Barrier;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Group;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -17,19 +23,59 @@ import ru.netology.nmedia.R;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final Barrier barrierEdit;
+
+  @NonNull
+  public final Barrier barrierSave;
+
+  @NonNull
+  public final ImageButton cancelButton;
+
+  @NonNull
+  public final EditText content;
+
+  @NonNull
+  public final Group group;
+
+  @NonNull
+  public final ImageView iconEdit;
 
   @NonNull
   public final RecyclerView recyclerList;
 
-  private ActivityMainBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView recyclerList) {
+  @NonNull
+  public final ImageButton saveButton;
+
+  @NonNull
+  public final TextView statusEdit;
+
+  @NonNull
+  public final TextView textNetology;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Barrier barrierEdit,
+      @NonNull Barrier barrierSave, @NonNull ImageButton cancelButton, @NonNull EditText content,
+      @NonNull Group group, @NonNull ImageView iconEdit, @NonNull RecyclerView recyclerList,
+      @NonNull ImageButton saveButton, @NonNull TextView statusEdit,
+      @NonNull TextView textNetology) {
     this.rootView = rootView;
+    this.barrierEdit = barrierEdit;
+    this.barrierSave = barrierSave;
+    this.cancelButton = cancelButton;
+    this.content = content;
+    this.group = group;
+    this.iconEdit = iconEdit;
     this.recyclerList = recyclerList;
+    this.saveButton = saveButton;
+    this.statusEdit = statusEdit;
+    this.textNetology = textNetology;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -54,13 +100,69 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.barrierEdit;
+      Barrier barrierEdit = ViewBindings.findChildViewById(rootView, id);
+      if (barrierEdit == null) {
+        break missingId;
+      }
+
+      id = R.id.barrierSave;
+      Barrier barrierSave = ViewBindings.findChildViewById(rootView, id);
+      if (barrierSave == null) {
+        break missingId;
+      }
+
+      id = R.id.cancelButton;
+      ImageButton cancelButton = ViewBindings.findChildViewById(rootView, id);
+      if (cancelButton == null) {
+        break missingId;
+      }
+
+      id = R.id.content;
+      EditText content = ViewBindings.findChildViewById(rootView, id);
+      if (content == null) {
+        break missingId;
+      }
+
+      id = R.id.group;
+      Group group = ViewBindings.findChildViewById(rootView, id);
+      if (group == null) {
+        break missingId;
+      }
+
+      id = R.id.icon_edit;
+      ImageView iconEdit = ViewBindings.findChildViewById(rootView, id);
+      if (iconEdit == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerList;
       RecyclerView recyclerList = ViewBindings.findChildViewById(rootView, id);
       if (recyclerList == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((FrameLayout) rootView, recyclerList);
+      id = R.id.saveButton;
+      ImageButton saveButton = ViewBindings.findChildViewById(rootView, id);
+      if (saveButton == null) {
+        break missingId;
+      }
+
+      id = R.id.status_edit;
+      TextView statusEdit = ViewBindings.findChildViewById(rootView, id);
+      if (statusEdit == null) {
+        break missingId;
+      }
+
+      id = R.id.text_netology;
+      TextView textNetology = ViewBindings.findChildViewById(rootView, id);
+      if (textNetology == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, barrierEdit, barrierSave,
+          cancelButton, content, group, iconEdit, recyclerList, saveButton, statusEdit,
+          textNetology);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

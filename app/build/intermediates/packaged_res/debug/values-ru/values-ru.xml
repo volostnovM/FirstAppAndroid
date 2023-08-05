@@ -2,9 +2,16 @@
 <resources>
     <string name="app_name">Первый проект</string>
     <string name="avatar">аватар</string>
+    <string name="edit_message">Изменить</string>
+    <string name="error_empty_content">Поле не может быть пустым</string>
+    <string name="icon_edit">Иконка изменить</string>
     <string name="icon_like">Иконка нравится</string>
     <string name="icon_share">Иконка поделиться</string>
     <string name="icon_view">"Иконка просмотров "</string>
     <string name="menu">меню</string>
+    <string name="menu_edit">Изменить</string>
+    <string name="menu_remove">Удалить</string>
     <string name="nmedia">НМедиа!</string>
+    <string name="post_text">Текст поста</string>
+    <string name="text_netology">Нетология</string>
 </resources>
