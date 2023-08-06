@@ -14,6 +14,7 @@
         app:layout_constraintBottom_toBottomOf="@id/barrierTop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/avatar_drawable"
         tools:srcCompat="@sample/posts_avatars" />
 
     <TextView
@@ -59,7 +60,7 @@
 
     <TextView
         android:id="@+id/content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_padding"
         android:autoLink="web"
