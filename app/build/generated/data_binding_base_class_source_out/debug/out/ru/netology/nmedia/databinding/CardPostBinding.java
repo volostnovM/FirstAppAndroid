@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.Barrier;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -38,22 +39,16 @@ public final class CardPostBinding implements ViewBinding {
   public final TextView content;
 
   @NonNull
-  public final ImageButton likeButton;
+  public final MaterialButton likeButton;
 
   @NonNull
-  public final TextView likeText;
-
-  @NonNull
-  public final ImageButton menu;
+  public final MaterialButton menu;
 
   @NonNull
   public final TextView published;
 
   @NonNull
-  public final ImageButton shareButton;
-
-  @NonNull
-  public final TextView shareText;
+  public final MaterialButton shareButton;
 
   @NonNull
   public final ImageButton viewButton;
@@ -63,9 +58,9 @@ public final class CardPostBinding implements ViewBinding {
 
   private CardPostBinding(@NonNull ConstraintLayout rootView, @NonNull TextView author,
       @NonNull ImageView avatar, @NonNull Barrier barrierBottomContent, @NonNull Barrier barrierTop,
-      @NonNull TextView content, @NonNull ImageButton likeButton, @NonNull TextView likeText,
-      @NonNull ImageButton menu, @NonNull TextView published, @NonNull ImageButton shareButton,
-      @NonNull TextView shareText, @NonNull ImageButton viewButton, @NonNull TextView viewText) {
+      @NonNull TextView content, @NonNull MaterialButton likeButton, @NonNull MaterialButton menu,
+      @NonNull TextView published, @NonNull MaterialButton shareButton,
+      @NonNull ImageButton viewButton, @NonNull TextView viewText) {
     this.rootView = rootView;
     this.author = author;
     this.avatar = avatar;
@@ -73,11 +68,9 @@ public final class CardPostBinding implements ViewBinding {
     this.barrierTop = barrierTop;
     this.content = content;
     this.likeButton = likeButton;
-    this.likeText = likeText;
     this.menu = menu;
     this.published = published;
     this.shareButton = shareButton;
-    this.shareText = shareText;
     this.viewButton = viewButton;
     this.viewText = viewText;
   }
@@ -140,19 +133,13 @@ public final class CardPostBinding implements ViewBinding {
       }
 
       id = R.id.likeButton;
-      ImageButton likeButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton likeButton = ViewBindings.findChildViewById(rootView, id);
       if (likeButton == null) {
         break missingId;
       }
 
-      id = R.id.likeText;
-      TextView likeText = ViewBindings.findChildViewById(rootView, id);
-      if (likeText == null) {
-        break missingId;
-      }
-
       id = R.id.menu;
-      ImageButton menu = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton menu = ViewBindings.findChildViewById(rootView, id);
       if (menu == null) {
         break missingId;
       }
@@ -164,14 +151,8 @@ public final class CardPostBinding implements ViewBinding {
       }
 
       id = R.id.shareButton;
-      ImageButton shareButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton shareButton = ViewBindings.findChildViewById(rootView, id);
       if (shareButton == null) {
-        break missingId;
-      }
-
-      id = R.id.shareText;
-      TextView shareText = ViewBindings.findChildViewById(rootView, id);
-      if (shareText == null) {
         break missingId;
       }
 
@@ -188,8 +169,7 @@ public final class CardPostBinding implements ViewBinding {
       }
 
       return new CardPostBinding((ConstraintLayout) rootView, author, avatar, barrierBottomContent,
-          barrierTop, content, likeButton, likeText, menu, published, shareButton, shareText,
-          viewButton, viewText);
+          barrierTop, content, likeButton, menu, published, shareButton, viewButton, viewText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
