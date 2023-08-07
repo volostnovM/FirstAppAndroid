@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
+
 interface OnInteractionListener {
     fun like(post: Post)
     fun share(post: Post)
@@ -39,11 +40,10 @@ class PostViewHolder(
             author.text = post.author
             published.text = post.published
             content.text = post.content
-            shareText.text = post.shared.toString()
-            likeText.text = post.likes.toString()
-            likeButton.setImageResource(
-                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-            )
+            shareButton.text = post.shared.toString()
+
+            likeButton.isChecked = post.likedByMe
+            likeButton.text = post.likes.toString()
             likeButton.setOnClickListener {
                 onInteractionListener.like(post)
             }
@@ -55,16 +55,18 @@ class PostViewHolder(
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
                     inflate(R.menu.menu_options)
-                    setOnMenuItemClickListener{item ->
-                        when(item.itemId) {
+                    setOnMenuItemClickListener { item ->
+                        when (item.itemId) {
                             R.id.remove -> {
                                 onInteractionListener.remove(post)
                                 true
                             }
+
                             R.id.edit -> {
                                 onInteractionListener.edit(post)
                                 true
                             }
+
                             else -> false
                         }
                     }
