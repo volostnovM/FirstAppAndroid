@@ -11,10 +11,15 @@
     <color name="white">#FFFFFFFF</color>
     <dimen name="avatar_size">48dp</dimen>
     <dimen name="common_padding">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
     <dimen name="icon_padding">8dp</dimen>
     <dimen name="size_icon">24dp</dimen>
+    <string name="add_post">add post</string>
     <string name="app_name">FirstProject</string>
     <string name="avatar">avatar</string>
+    <string name="cancel">cancel</string>
+    <string name="chooser_share_post">choose share post</string>
+    <string name="description_post_save">description_post_save</string>
     <string name="edit_message">Edit message</string>
     <string name="error_empty_content">Error empty content</string>
     <string name="icon_edit">icon_edit</string>
@@ -25,8 +30,11 @@
     <string name="menu_edit">edit</string>
     <string name="menu_remove">remove</string>
     <string name="nmedia">NMedia!</string>
+    <string name="play_video">play video</string>
     <string name="post_text">Post text</string>
+    <string name="save">save</string>
     <string name="text_netology">Netology</string>
+    <string name="video">video</string>
     <style name="Base.Theme.FirstProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         

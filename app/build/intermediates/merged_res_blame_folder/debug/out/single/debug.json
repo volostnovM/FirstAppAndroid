@@ -1,122 +1,210 @@
 [
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_baseline_save_alt_48.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\baseline_save_alt_48.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_cancel_48.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_cancel_48.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxhdpi_ic_video.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxhdpi\\ic_video.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_avatar_drawable.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\avatar_drawable.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_ic_cancel_48.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\ic_cancel_48.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_ic_like_selector.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\ic_like_selector.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxhdpi_ic_video_foreground.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxhdpi\\ic_video_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_edit_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_edit_24.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_ic_liked_24.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\ic_liked_24.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xhdpi_ic_video_foreground.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xhdpi\\ic_video_foreground.webp"
     },
     {
-        "merged": "ru.netology.nmedia.app-merged_res-36:/layout_card_post.xml.flat",
-        "source": "ru.netology.nmedia.app-main-38:/layout/card_post.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-hdpi_ic_video_round.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-hdpi\\ic_video_round.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_like_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_like_24.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_baseline_more_vert_24.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\baseline_more_vert_24.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-hdpi_ic_video.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-hdpi\\ic_video.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_ok_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_ok_24.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\color_like_selector.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\color\\like_selector.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\menu_menu_options.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\menu\\menu_options.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_baseline_share_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\baseline_share_24.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\layout_card_post.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\layout\\card_post.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\color_like_selector.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\color\\like_selector.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-mdpi_ic_video.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-mdpi\\ic_video.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_ic_like_24.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\ic_like_24.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxxhdpi_ic_video_round.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxxhdpi\\ic_video_round.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_ic_edit_24.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\ic_edit_24.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-anydpi-v26_ic_video_round.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-anydpi-v26\\ic_video_round.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_baseline_share_24.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\baseline_share_24.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xhdpi_ic_video.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xhdpi\\ic_video.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_baseline_favorite_border_24.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\baseline_favorite_border_24.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxxhdpi_ic_video_foreground.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxxhdpi\\ic_video_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\drawable_avatar_drawable.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\drawable\\avatar_drawable.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_video.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_video.png"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\menu_menu_options.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\menu\\menu_options.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\layout_activity_new_post.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\layout\\activity_new_post.xml"
     },
     {
-        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-36:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-38:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxhdpi_ic_video_round.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxhdpi\\ic_video_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\layout_card_post.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\layout\\card_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxxhdpi_ic_video.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxxhdpi\\ic_video.webp"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_baseline_save_alt_48.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\baseline_save_alt_48.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\layout_activity_intent_handler.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\layout\\activity_intent_handler.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-mdpi_ic_video_round.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-mdpi\\ic_video_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xhdpi_ic_video_round.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xhdpi\\ic_video_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\layout_activity_edit_post.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\layout\\activity_edit_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_baseline_favorite_border_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\baseline_favorite_border_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_baseline_more_vert_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\baseline_more_vert_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_liked_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_liked_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-anydpi-v26_ic_video.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-anydpi-v26\\ic_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_play_circle_24.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_play_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-mdpi_ic_video_foreground.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-mdpi\\ic_video_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_like_selector.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_like_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-hdpi_ic_video_foreground.webp.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-hdpi\\ic_video_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-merged_res-38:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-40:\\mipmap-xhdpi\\ic_launcher_round.png"
     }
 ]

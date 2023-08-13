@@ -2199,6 +2199,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -2948,7 +2949,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_ok_24
+drawable ic_play_circle_24
 drawable ic_search_black_24
+drawable ic_video
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3114,8 +3118,6 @@ id autoCompleteToStart
 id avatar
 id barrier
 id barrierBottomContent
-id barrierEdit
-id barrierSave
 id barrierTop
 id baseline
 id beginOnFirstDraw
@@ -3123,6 +3125,7 @@ id beginning
 id bestChoice
 id blocking
 id bottom
+id bottomAppBar
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3157,6 +3160,7 @@ id constraint
 id container
 id content
 id contentPanel
+id contentTextView
 id contiguous
 id continuousVelocity
 id coordinator
@@ -3202,6 +3206,7 @@ id easeOut
 id east
 id edge
 id edit
+id editPost
 id edit_query
 id elastic
 id embed
@@ -3212,6 +3217,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fade
 id fill
 id fill_horizontal
@@ -3234,7 +3240,6 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
-id group
 id group_divider
 id grouping
 id groups
@@ -3245,7 +3250,6 @@ id homeAsUp
 id honorRequest
 id horizontal_only
 id icon
-id icon_edit
 id icon_group
 id ifRoom
 id ignore
@@ -3353,6 +3357,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id off
+id ok
 id on
 id onInterceptTouchReturnSwipe
 id outline
@@ -3370,6 +3375,8 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id play
+id playVideoGroup
 id pooling_container_listener_holder_tag
 id position
 id postLayout
@@ -3462,7 +3469,6 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
-id status_edit
 id stop
 id stretch
 id submenuarrow
@@ -3492,7 +3498,6 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_netology
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3521,6 +3526,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id video
 id viewButton
 id viewText
 id view_offset_helper
@@ -3653,7 +3659,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_edit_post
+layout activity_intent_handler
 layout activity_main
+layout activity_new_post
 layout card_post
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3763,6 +3772,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add_post
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -3773,10 +3783,13 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string chooser_share_post
 string clear_text_end_icon_content_description
+string description_post_save
 string edit_message
 string error_a11y_label
 string error_empty_content
@@ -3899,7 +3912,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string play_video
 string post_text
+string save
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -3908,6 +3923,7 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
 string text_netology
+string video
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

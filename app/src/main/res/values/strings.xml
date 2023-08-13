@@ -13,5 +13,12 @@
     <string name="icon_edit">icon_edit</string>
     <string name="edit_message">Edit message</string>
     <string name="text_netology">Netology</string>
+    <string name="description_post_save">description_post_save</string>
+    <string name="chooser_share_post">choose share post</string>
+    <string name="add_post">add post</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+    <string name="video">video</string>
+    <string name="play_video">play video</string>
 
 </resources>

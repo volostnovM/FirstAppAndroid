@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.Barrier;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Group;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
@@ -45,10 +46,19 @@ public final class CardPostBinding implements ViewBinding {
   public final MaterialButton menu;
 
   @NonNull
+  public final ImageButton play;
+
+  @NonNull
+  public final Group playVideoGroup;
+
+  @NonNull
   public final TextView published;
 
   @NonNull
   public final MaterialButton shareButton;
+
+  @NonNull
+  public final ImageView video;
 
   @NonNull
   public final ImageButton viewButton;
@@ -59,7 +69,8 @@ public final class CardPostBinding implements ViewBinding {
   private CardPostBinding(@NonNull ConstraintLayout rootView, @NonNull TextView author,
       @NonNull ImageView avatar, @NonNull Barrier barrierBottomContent, @NonNull Barrier barrierTop,
       @NonNull TextView content, @NonNull MaterialButton likeButton, @NonNull MaterialButton menu,
-      @NonNull TextView published, @NonNull MaterialButton shareButton,
+      @NonNull ImageButton play, @NonNull Group playVideoGroup, @NonNull TextView published,
+      @NonNull MaterialButton shareButton, @NonNull ImageView video,
       @NonNull ImageButton viewButton, @NonNull TextView viewText) {
     this.rootView = rootView;
     this.author = author;
@@ -69,8 +80,11 @@ public final class CardPostBinding implements ViewBinding {
     this.content = content;
     this.likeButton = likeButton;
     this.menu = menu;
+    this.play = play;
+    this.playVideoGroup = playVideoGroup;
     this.published = published;
     this.shareButton = shareButton;
+    this.video = video;
     this.viewButton = viewButton;
     this.viewText = viewText;
   }
@@ -144,6 +158,18 @@ public final class CardPostBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.play;
+      ImageButton play = ViewBindings.findChildViewById(rootView, id);
+      if (play == null) {
+        break missingId;
+      }
+
+      id = R.id.playVideoGroup;
+      Group playVideoGroup = ViewBindings.findChildViewById(rootView, id);
+      if (playVideoGroup == null) {
+        break missingId;
+      }
+
       id = R.id.published;
       TextView published = ViewBindings.findChildViewById(rootView, id);
       if (published == null) {
@@ -153,6 +179,12 @@ public final class CardPostBinding implements ViewBinding {
       id = R.id.shareButton;
       MaterialButton shareButton = ViewBindings.findChildViewById(rootView, id);
       if (shareButton == null) {
+        break missingId;
+      }
+
+      id = R.id.video;
+      ImageView video = ViewBindings.findChildViewById(rootView, id);
+      if (video == null) {
         break missingId;
       }
 
@@ -169,7 +201,8 @@ public final class CardPostBinding implements ViewBinding {
       }
 
       return new CardPostBinding((ConstraintLayout) rootView, author, avatar, barrierBottomContent,
-          barrierTop, content, likeButton, menu, published, shareButton, viewButton, viewText);
+          barrierTop, content, likeButton, menu, play, playVideoGroup, published, shareButton,
+          video, viewButton, viewText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
