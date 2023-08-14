@@ -3,6 +3,7 @@ package ru.netology.nmedia.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.nmedia.databinding.ActivityNewPostBinding
 
@@ -23,5 +24,15 @@ class NewPostActivity : AppCompatActivity() {
             }
             finish()
         }
+
+        val newPostActivity = this
+        newPostActivity.onBackPressedDispatcher.addCallback(
+            newPostActivity, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    setResult(RESULT_CANCELED, intent)
+                    finish()
+                }
+            }
+        )
     }
 }

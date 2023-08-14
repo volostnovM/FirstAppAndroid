@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.ActivityEditPostBinding
 
@@ -37,5 +38,15 @@ class EditPostActivity : AppCompatActivity() {
             setResult(Activity.RESULT_CANCELED, intent)
             finish()
         }
+
+        val editPostActivity = this
+        editPostActivity.onBackPressedDispatcher.addCallback(
+            editPostActivity, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    setResult(RESULT_CANCELED, intent)
+                    finish()
+                }
+            }
+        )
     }
 }

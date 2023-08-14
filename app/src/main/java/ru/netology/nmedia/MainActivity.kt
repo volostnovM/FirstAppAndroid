@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.launch
 import androidx.activity.viewModels
 import ru.netology.nmedia.activity.EditPostResultContract
@@ -79,5 +80,15 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             newPostLauncher.launch()
         }
+
+        val mainActivity = this
+        mainActivity.onBackPressedDispatcher.addCallback(
+            mainActivity, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    setResult(RESULT_CANCELED, intent)
+                    finish()
+                }
+            }
+        )
     }
 }
