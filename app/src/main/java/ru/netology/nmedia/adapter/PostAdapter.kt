@@ -17,6 +17,8 @@ interface OnInteractionListener {
     fun remove(post: Post)
     fun edit(post: Post)
     fun video(post: Post)
+    fun viewPost(post: Post)
+
 }
 
 class PostsAdapter(
@@ -83,6 +85,7 @@ class PostViewHolder(
 
             play.setOnClickListener { onInteractionListener.video(post) }
             video.setOnClickListener { onInteractionListener.video(post) }
+            root.setOnClickListener { onInteractionListener.viewPost(post) }
         }
     }
 }

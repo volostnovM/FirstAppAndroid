@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-36:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-46:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\561c353bdd79c7b68147f703b90a3f4d\\transformed\\appcompat-1.5.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\329a5c3f917f666f9bf9ea98e7178a15\\transformed\\appcompat-1.5.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
