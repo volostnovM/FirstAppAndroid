@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.activity.EditPostFragment.Companion.textArg
-import ru.netology.nmedia.activity.EditPostResultContract
 import ru.netology.nmedia.activity.PostFragment.Companion.idArg
 import ru.netology.nmedia.adapter.OnInteractionListener
 import ru.netology.nmedia.adapter.PostsAdapter
@@ -28,11 +27,6 @@ class FeedFragment : Fragment() {
         val binding = FragmentFeedBinding.inflate(layoutInflater)
 
         val viewModel: PostViewModel by activityViewModels()
-
-        val editPostLauncher = registerForActivityResult(EditPostResultContract()) { result ->
-            result ?: return@registerForActivityResult
-            viewModel.changeContentAndSave(result)
-        }
 
         val adapter = PostsAdapter(object : OnInteractionListener {
             override fun like(post: Post) {
@@ -56,9 +50,6 @@ class FeedFragment : Fragment() {
             }
 
             override fun edit(post: Post) {
-                viewModel.edit(post)
-                editPostLauncher.launch(post.content)
-
                 viewModel.edit(post)
                 findNavController().navigate(
                     R.id.action_feedFragment_to_editPostFragment,
