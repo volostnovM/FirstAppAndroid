@@ -34,7 +34,6 @@ class NewPostFragment : Fragment() {
 
         binding.edit.requestFocus()
         binding.ok.setOnClickListener {
-            val intent = Intent()
             if (!binding.edit.text.isNullOrBlank()) {
                 val content = binding.edit.text.toString()
                 viewModel.changeContentAndSave(content)
