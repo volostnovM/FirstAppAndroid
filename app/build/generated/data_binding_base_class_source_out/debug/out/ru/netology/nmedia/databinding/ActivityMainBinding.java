@@ -4,6 +4,7 @@ package ru.netology.nmedia.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.Barrier;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Group;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -23,63 +26,51 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView author;
+  public final Barrier barrierEdit;
 
   @NonNull
-  public final ImageView avatar;
+  public final Barrier barrierSave;
 
   @NonNull
-  public final Barrier barrierBottomContent;
+  public final ImageButton cancelButton;
 
   @NonNull
-  public final Barrier barrierTop;
+  public final EditText content;
 
   @NonNull
-  public final TextView content;
+  public final Group group;
 
   @NonNull
-  public final ImageButton likeButton;
+  public final ImageView iconEdit;
 
   @NonNull
-  public final TextView likeText;
+  public final RecyclerView recyclerList;
 
   @NonNull
-  public final ImageButton menu;
+  public final ImageButton saveButton;
 
   @NonNull
-  public final TextView published;
+  public final TextView statusEdit;
 
   @NonNull
-  public final ImageButton shareButton;
+  public final TextView textNetology;
 
-  @NonNull
-  public final TextView shareText;
-
-  @NonNull
-  public final ImageButton viewButton;
-
-  @NonNull
-  public final TextView viewText;
-
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView author,
-      @NonNull ImageView avatar, @NonNull Barrier barrierBottomContent, @NonNull Barrier barrierTop,
-      @NonNull TextView content, @NonNull ImageButton likeButton, @NonNull TextView likeText,
-      @NonNull ImageButton menu, @NonNull TextView published, @NonNull ImageButton shareButton,
-      @NonNull TextView shareText, @NonNull ImageButton viewButton, @NonNull TextView viewText) {
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Barrier barrierEdit,
+      @NonNull Barrier barrierSave, @NonNull ImageButton cancelButton, @NonNull EditText content,
+      @NonNull Group group, @NonNull ImageView iconEdit, @NonNull RecyclerView recyclerList,
+      @NonNull ImageButton saveButton, @NonNull TextView statusEdit,
+      @NonNull TextView textNetology) {
     this.rootView = rootView;
-    this.author = author;
-    this.avatar = avatar;
-    this.barrierBottomContent = barrierBottomContent;
-    this.barrierTop = barrierTop;
+    this.barrierEdit = barrierEdit;
+    this.barrierSave = barrierSave;
+    this.cancelButton = cancelButton;
     this.content = content;
-    this.likeButton = likeButton;
-    this.likeText = likeText;
-    this.menu = menu;
-    this.published = published;
-    this.shareButton = shareButton;
-    this.shareText = shareText;
-    this.viewButton = viewButton;
-    this.viewText = viewText;
+    this.group = group;
+    this.iconEdit = iconEdit;
+    this.recyclerList = recyclerList;
+    this.saveButton = saveButton;
+    this.statusEdit = statusEdit;
+    this.textNetology = textNetology;
   }
 
   @Override
@@ -109,87 +100,69 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.author;
-      TextView author = ViewBindings.findChildViewById(rootView, id);
-      if (author == null) {
+      id = R.id.barrierEdit;
+      Barrier barrierEdit = ViewBindings.findChildViewById(rootView, id);
+      if (barrierEdit == null) {
         break missingId;
       }
 
-      id = R.id.avatar;
-      ImageView avatar = ViewBindings.findChildViewById(rootView, id);
-      if (avatar == null) {
+      id = R.id.barrierSave;
+      Barrier barrierSave = ViewBindings.findChildViewById(rootView, id);
+      if (barrierSave == null) {
         break missingId;
       }
 
-      id = R.id.barrierBottomContent;
-      Barrier barrierBottomContent = ViewBindings.findChildViewById(rootView, id);
-      if (barrierBottomContent == null) {
-        break missingId;
-      }
-
-      id = R.id.barrierTop;
-      Barrier barrierTop = ViewBindings.findChildViewById(rootView, id);
-      if (barrierTop == null) {
+      id = R.id.cancelButton;
+      ImageButton cancelButton = ViewBindings.findChildViewById(rootView, id);
+      if (cancelButton == null) {
         break missingId;
       }
 
       id = R.id.content;
-      TextView content = ViewBindings.findChildViewById(rootView, id);
+      EditText content = ViewBindings.findChildViewById(rootView, id);
       if (content == null) {
         break missingId;
       }
 
-      id = R.id.likeButton;
-      ImageButton likeButton = ViewBindings.findChildViewById(rootView, id);
-      if (likeButton == null) {
+      id = R.id.group;
+      Group group = ViewBindings.findChildViewById(rootView, id);
+      if (group == null) {
         break missingId;
       }
 
-      id = R.id.likeText;
-      TextView likeText = ViewBindings.findChildViewById(rootView, id);
-      if (likeText == null) {
+      id = R.id.icon_edit;
+      ImageView iconEdit = ViewBindings.findChildViewById(rootView, id);
+      if (iconEdit == null) {
         break missingId;
       }
 
-      id = R.id.menu;
-      ImageButton menu = ViewBindings.findChildViewById(rootView, id);
-      if (menu == null) {
+      id = R.id.recyclerList;
+      RecyclerView recyclerList = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerList == null) {
         break missingId;
       }
 
-      id = R.id.published;
-      TextView published = ViewBindings.findChildViewById(rootView, id);
-      if (published == null) {
+      id = R.id.saveButton;
+      ImageButton saveButton = ViewBindings.findChildViewById(rootView, id);
+      if (saveButton == null) {
         break missingId;
       }
 
-      id = R.id.shareButton;
-      ImageButton shareButton = ViewBindings.findChildViewById(rootView, id);
-      if (shareButton == null) {
+      id = R.id.status_edit;
+      TextView statusEdit = ViewBindings.findChildViewById(rootView, id);
+      if (statusEdit == null) {
         break missingId;
       }
 
-      id = R.id.shareText;
-      TextView shareText = ViewBindings.findChildViewById(rootView, id);
-      if (shareText == null) {
+      id = R.id.text_netology;
+      TextView textNetology = ViewBindings.findChildViewById(rootView, id);
+      if (textNetology == null) {
         break missingId;
       }
 
-      id = R.id.viewButton;
-      ImageButton viewButton = ViewBindings.findChildViewById(rootView, id);
-      if (viewButton == null) {
-        break missingId;
-      }
-
-      id = R.id.viewText;
-      TextView viewText = ViewBindings.findChildViewById(rootView, id);
-      if (viewText == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((ConstraintLayout) rootView, author, avatar,
-          barrierBottomContent, barrierTop, content, likeButton, likeText, menu, published,
-          shareButton, shareText, viewButton, viewText);
+      return new ActivityMainBinding((ConstraintLayout) rootView, barrierEdit, barrierSave,
+          cancelButton, content, group, iconEdit, recyclerList, saveButton, statusEdit,
+          textNetology);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
