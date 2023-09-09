@@ -1,10 +1,19 @@
 package ru.netology.nmedia
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.launch
+import androidx.activity.viewModels
+import ru.netology.nmedia.activity.EditPostResultContract
+import ru.netology.nmedia.activity.NewPostResultContract
+import ru.netology.nmedia.adapter.OnInteractionListener
+import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.databinding.ActivityMainBinding
 import ru.netology.nmedia.dto.Post
-import ru.netology.nmedia.service.Service
+import ru.netology.nmedia.viewmodel.PostViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,36 +21,74 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val post = Post(
-            1L,
-            "Нетология. Университет интернет-профессий будущего",
-            "21 мая в 18:36",
-            "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb",
-            false,
-            999,
-            153
-        )
+        val viewModel: PostViewModel by viewModels()
 
-        with(binding) {
-            author.text = post.author
-            published.text = post.published
-            content.text = post.content
-            likeText.text = Service.numberCorrelation(post.likes)
-            shareText.text = Service.numberCorrelation(post.shared)
+        val editPostLauncher = registerForActivityResult(EditPostResultContract()) { result ->
+            result ?: return@registerForActivityResult
+            viewModel.changeContentAndSave(result)
+        }
 
-            if (post.likedByMe) likeButton.setImageResource(R.drawable.ic_liked_24)
-
-            likeButton.setOnClickListener {
-                post.likedByMe = !post.likedByMe
-                if (post.likedByMe) post.likes++ else post.likes--
-                likeButton.setImageResource(if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24)
-                likeText.text = Service.numberCorrelation(post.likes)
+        val adapter = PostsAdapter(object : OnInteractionListener {
+            override fun like(post: Post) {
+                viewModel.likeById(post.id)
             }
 
-            shareButton.setOnClickListener {
-                post.shared++
-                shareText.text = Service.numberCorrelation(post.shared)
+            override fun share(post: Post) {
+                val intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, post.content)
+                    type = "text/plain"
+                }
+
+                val shareIntent =
+                    Intent.createChooser(intent, getString(R.string.chooser_share_post))
+                startActivity(shareIntent)
+            }
+
+            override fun remove(post: Post) {
+                viewModel.removeById(post.id)
+            }
+
+            override fun edit(post: Post) {
+                viewModel.edit(post)
+                editPostLauncher.launch(post.content)
+            }
+
+            override fun video(post: Post) {
+                val videoIntent = Intent(Intent.ACTION_VIEW, Uri.parse(post.video))
+                startActivity(videoIntent)
             }
         }
+        )
+
+
+        binding.recyclerList.adapter = adapter
+        viewModel.data.observe(this) { posts ->
+            val newPost = posts.size > adapter.currentList.size
+            adapter.submitList(posts) {
+                if (newPost) {
+                    binding.recyclerList.smoothScrollToPosition(0)
+                }
+            }
+        }
+
+        val newPostLauncher = registerForActivityResult(NewPostResultContract()) { result ->
+            result ?: return@registerForActivityResult
+            viewModel.changeContentAndSave(result)
+        }
+
+        binding.fab.setOnClickListener {
+            newPostLauncher.launch()
+        }
+
+        val mainActivity = this
+        mainActivity.onBackPressedDispatcher.addCallback(
+            mainActivity, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    setResult(RESULT_CANCELED, intent)
+                    finish()
+                }
+            }
+        )
     }
 }
