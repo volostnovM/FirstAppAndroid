@@ -2,46 +2,85 @@ package ru.netology.nmedia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
+import ru.netology.nmedia.adapter.OnInteractionListener
+import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.databinding.ActivityMainBinding
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.service.Service
+import ru.netology.nmedia.util.AndroidUtils
+import ru.netology.nmedia.util.AndroidUtils.focusAndShowKeyboard
+import ru.netology.nmedia.viewmodel.PostViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.group.visibility = View.GONE
 
-        val post = Post(
-            1L,
-            "Нетология. Университет интернет-профессий будущего",
-            "21 мая в 18:36",
-            "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb",
-            false,
-            999,
-            153
+        val viewModel: PostViewModel by viewModels()
+        val adapter = PostsAdapter(object : OnInteractionListener {
+            override fun like(post: Post) {
+                viewModel.likeById(post.id)
+            }
+
+            override fun share(post: Post) {
+                viewModel.share(post.id)
+            }
+
+            override fun remove(post: Post) {
+                viewModel.removeById(post.id)
+            }
+
+            override fun edit(post: Post) {
+                viewModel.edit(post)
+                binding.group.visibility = View.VISIBLE
+            }
+        }
         )
 
-        with(binding) {
-            author.text = post.author
-            published.text = post.published
-            content.text = post.content
-            likeText.text = Service.numberCorrelation(post.likes)
-            shareText.text = Service.numberCorrelation(post.shared)
-
-            if (post.likedByMe) likeButton.setImageResource(R.drawable.ic_liked_24)
-
-            likeButton.setOnClickListener {
-                post.likedByMe = !post.likedByMe
-                if (post.likedByMe) post.likes++ else post.likes--
-                likeButton.setImageResource(if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24)
-                likeText.text = Service.numberCorrelation(post.likes)
+        viewModel.edited.observe(this) {
+            if(it.id != 0L) {
+                binding.content.setText(it.content)
+                binding.content.focusAndShowKeyboard()
             }
+        }
 
-            shareButton.setOnClickListener {
-                post.shared++
-                shareText.text = Service.numberCorrelation(post.shared)
+
+        binding.recyclerList.adapter = adapter
+        viewModel.data.observe(this) { posts ->
+            val newPost = posts.size > adapter.currentList.size
+            adapter.submitList(posts) {
+                if (newPost) {
+                    binding.recyclerList.smoothScrollToPosition(0)
+                }
             }
+        }
+
+        binding.saveButton.setOnClickListener {
+            val text = binding.content.text.toString()
+            if (text.isEmpty()) {
+                val makeText =
+                    Toast.makeText(this, R.string.error_empty_content, Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            viewModel.changeContentAndSave(text)
+
+            binding.content.setText("")
+            binding.content.clearFocus()
+            AndroidUtils.hideKeyboard(it)
+            binding.group.visibility = View.GONE
+        }
+
+        binding.cancelButton.setOnClickListener {
+            binding.content.setText("")
+            binding.content.clearFocus()
+            AndroidUtils.hideKeyboard(it)
+            viewModel.cancelEditing()
+            binding.group.visibility = View.GONE
         }
     }
 }

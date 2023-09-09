@@ -1,0 +1,4 @@
+ru.netology.nmedia.test.app-androidTest-0 C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\build\generated\res\resValues\androidTest\debug
+ru.netology.nmedia.test.app-mergeDebugAndroidTestResources-1 C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+ru.netology.nmedia.test.app-mergeDebugAndroidTestResources-2 C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+ru.netology.nmedia.test.app-merged_res-3 C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\build\intermediates\merged_res\debugAndroidTest

@@ -6,4 +6,12 @@
     <string name="icon_like">icon like</string>
     <string name="icon_share">icon share</string>
     <string name="icon_view">icon view</string>
+    <string name="menu_remove">remove</string>
+    <string name="menu_edit">edit</string>
+    <string name="post_text">Post text</string>
+    <string name="error_empty_content">Error empty content</string>
+    <string name="icon_edit">icon_edit</string>
+    <string name="edit_message">Edit message</string>
+    <string name="text_netology">Netology</string>
+
 </resources>

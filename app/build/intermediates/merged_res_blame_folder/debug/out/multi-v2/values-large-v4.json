@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-23:/values-large-v4/values-large-v4.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-34:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Max\\.gradle\\caches\\transforms-3\\5edeb6b2f97c50671381949df04f034e\\transformed\\appcompat-1.4.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\561c353bdd79c7b68147f703b90a3f4d\\transformed\\appcompat-1.5.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Max\\.gradle\\caches\\transforms-3\\5a5c5e5c7026544de9ccf8875773e4ef\\transformed\\material-1.5.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\fa9c7aecbf23d8a199804995bece2255\\transformed\\material-1.9.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,10",
                         "startColumns": "4,4,4,4",
