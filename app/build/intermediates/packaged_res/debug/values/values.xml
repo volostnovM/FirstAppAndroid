@@ -18,10 +18,19 @@
     <string name="app_name">FirstProject</string>
     <string name="avatar">avatar</string>
     <string name="cancel">cancel</string>
+    <string name="channel_remote_description">Notification from remote server</string>
+    <string name="channel_remote_name">channel remote name</string>
     <string name="chooser_share_post">choose share post</string>
+    <string name="default_web_client_id" translatable="false">610441040419-365fugnemmc2l183ekkj0njf19p89df0.apps.googleusercontent.com</string>
     <string name="description_post_save">description_post_save</string>
     <string name="edit_message">Edit message</string>
+    <string name="error_action_title">Error</string>
     <string name="error_empty_content">Error empty content</string>
+    <string name="gcm_defaultSenderId" translatable="false">610441040419</string>
+    <string name="google_api_key" translatable="false">AIzaSyA3ATpDCQcrLyECv1v6q6lmDW8FzyrJpZM</string>
+    <string name="google_app_id" translatable="false">1:610441040419:android:4f1648ebb05016a6531796</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA3ATpDCQcrLyECv1v6q6lmDW8FzyrJpZM</string>
+    <string name="google_storage_bucket" translatable="false">nmedia-56e4e.appspot.com</string>
     <string name="icon_edit">icon_edit</string>
     <string name="icon_like">icon like</string>
     <string name="icon_share">icon share</string>
@@ -30,8 +39,11 @@
     <string name="menu_edit">edit</string>
     <string name="menu_remove">remove</string>
     <string name="nmedia">NMedia!</string>
+    <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
+    <string name="notification_user_new_posted">%1$s posted a new post</string>
     <string name="play_video">play video</string>
     <string name="post_text">Post text</string>
+    <string name="project_id" translatable="false">nmedia-56e4e</string>
     <string name="save">save</string>
     <string name="text_netology">Netology</string>
     <string name="video">video</string>

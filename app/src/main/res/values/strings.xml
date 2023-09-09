@@ -20,5 +20,10 @@
     <string name="cancel">cancel</string>
     <string name="video">video</string>
     <string name="play_video">play video</string>
+    <string name="channel_remote_name">channel remote name</string>
+    <string name="channel_remote_description">Notification from remote server</string>
+    <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
+    <string name="notification_user_new_posted">%1$s posted a new post</string>
+    <string name="error_action_title">Error</string>
 
 </resources>

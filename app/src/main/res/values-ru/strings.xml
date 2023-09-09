@@ -21,4 +21,9 @@
     <string name="cancel">Отмена</string>
     <string name="video">Видео</string>
     <string name="play_video">Играть видео</string>
+    <string name="channel_remote_name">Уведомление с сервера</string>
+    <string name="channel_remote_description">Уведомление с удаленного сервера</string>
+    <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
+    <string name="notification_user_new_posted">%1$s опубликовал новый пост</string>
+    <string name="error_action_title">Ошибка</string>
 </resources>
