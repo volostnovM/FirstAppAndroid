@@ -35,26 +35,28 @@ class PostRepositoryOkHTTTP: PostRepository {
             }
     }
 
-    override fun likeById(id: Long) {
+    override fun likeById(id: Long): Post {
         val request: Request = Request.Builder()
             .post(gson.toJson(Unit).toRequestBody(jsonType))
             .url("${BASE_URL}/api/posts/$id/likes")
             .build()
 
-        client.newCall(request)
-            .execute()
-            .close()
+        val call = client.newCall(request)
+        val response = call.execute()
+        val responseString = response.body?.string() ?: error("Body with likes is null")
+        return gson.fromJson(responseString, Post::class.java)
     }
 
-    override fun unlikeById(id: Long) {
+    override fun unlikeById(id: Long): Post {
         val request: Request = Request.Builder()
             .delete(gson.toJson(Unit).toRequestBody(jsonType))
             .url("${BASE_URL}/api/posts/$id/likes")
             .build()
 
-        client.newCall(request)
-            .execute()
-            .close()
+        val call = client.newCall(request)
+        val response = call.execute()
+        val responseString = response.body?.string() ?: error("Body with likes is null")
+        return gson.fromJson(responseString, Post::class.java)
     }
 
     override fun share(id: Long) {
@@ -77,10 +79,6 @@ class PostRepositoryOkHTTTP: PostRepository {
             .post(gson.toJson(post).toRequestBody(jsonType))
             .url("${BASE_URL}/api/slow/posts")
             .build()
-
-        client.newCall(request)
-            .execute()
-            .close()
 
         val call = client.newCall(request)
         val response = call.execute()
