@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -30,7 +31,11 @@ class FeedFragment : Fragment() {
 
         val adapter = PostsAdapter(object : OnInteractionListener {
             override fun like(post: Post) {
-                viewModel.likeById(post.id)
+                if (post.likedByMe) {
+                    viewModel.unlikeById(post.id)
+                } else {
+                    viewModel.likeById(post.id)
+                }
             }
 
             override fun share(post: Post) {
@@ -78,13 +83,27 @@ class FeedFragment : Fragment() {
 
 
         binding.recyclerList.adapter = adapter
-        viewModel.data.observe(viewLifecycleOwner) { posts ->
-            val newPost = posts.size > adapter.currentList.size
-            adapter.submitList(posts) {
+
+        viewModel.data.observe(viewLifecycleOwner) { state ->
+            val newPost = state.posts.size > adapter.currentList.size
+            adapter.submitList(state.posts) {
                 if (newPost) {
                     binding.recyclerList.smoothScrollToPosition(0)
                 }
             }
+
+            binding.progress.isVisible = state.loading
+            binding.errorGroup.isVisible = state.error
+            binding.emptyTextView.isVisible = state.empty
+            binding.swipeRefresh.isRefreshing = state.refreshing
+        }
+
+        binding.retryButton.setOnClickListener {
+            viewModel.loadPosts()
+        }
+
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.loadPosts()
         }
 
         binding.fab.setOnClickListener {

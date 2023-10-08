@@ -1138,6 +1138,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -3312,10 +3313,13 @@ id editPostFragment
 id edit_query
 id elastic
 id embed
+id emptyTextView
 id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id errorGroup
+id errorTextView
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3494,6 +3498,7 @@ id position
 id postFragment
 id postLayout
 id pressed
+id progress
 id progress_circular
 id progress_horizontal
 id published
@@ -3503,6 +3508,7 @@ id rectangles
 id recyclerList
 id remove
 id report_drawn
+id retryButton
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3590,6 +3596,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id swipeRefresh
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3961,6 +3968,7 @@ string icon_edit
 string icon_like
 string icon_share
 string icon_view
+string internet_error
 string item_view_role_description
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -4067,6 +4075,7 @@ string mtrl_timepicker_confirm
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nmedia
+string no_text
 string notification_user_liked
 string notification_user_new_posted
 string password_toggle_content_description
@@ -4077,6 +4086,7 @@ string path_password_strike_through
 string play_video
 string post_text
 string project_id
+string retry
 string save
 string search_menu_title
 string searchbar_scrolling_view_behavior
@@ -5344,6 +5354,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

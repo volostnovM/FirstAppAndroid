@@ -1,4 +1,4 @@
-#Wed Sep 06 16:09:21 MSK 2023
+#Thu Oct 05 21:07:48 MSK 2023
 base.0=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 base.1=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
 base.2=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\1\\classes.dex
