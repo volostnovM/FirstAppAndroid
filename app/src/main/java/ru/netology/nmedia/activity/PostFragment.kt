@@ -35,9 +35,9 @@ class PostFragment : Fragment() {
 
         val viewModel: PostViewModel by activityViewModels()
 
-        viewModel.data.observe(viewLifecycleOwner) { posts ->
+        viewModel.data.observe(viewLifecycleOwner) { state ->
             binding.postFragment.apply {
-                posts.map { post ->
+                state.posts.map { post ->
                     if (post.id == id) {
                         PostViewHolder(this, object : OnInteractionListener {
 

@@ -39,6 +39,9 @@ class NewPostFragment : Fragment() {
                 viewModel.changeContentAndSave(content)
                 AndroidUtils.hideKeyboard(binding.edit)
             }
+        }
+
+        viewModel.postCreated.observe(viewLifecycleOwner) {
             findNavController().navigateUp()
         }
 
