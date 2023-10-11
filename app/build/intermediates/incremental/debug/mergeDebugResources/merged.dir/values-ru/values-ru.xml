@@ -84,6 +84,7 @@
     <string name="icon_like">Иконка нравится</string>
     <string name="icon_share">Иконка поделиться</string>
     <string name="icon_view">"Иконка просмотров "</string>
+    <string name="internet_error">Проблемы с соединением с сервером</string>
     <string name="item_view_role_description">Вкладка</string>
     <string name="material_clock_toggle_content_description">Выберите AM (до полудня) или PM (после полудня)</string>
     <string name="material_hour_24h_suffix">%1$s ч.</string>
@@ -140,11 +141,13 @@
     <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Перейти вверх"</string>
     <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Открыть панель навигации"</string>
     <string name="nmedia">НМедиа!</string>
+    <string name="no_text">Нет постов</string>
     <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
     <string name="notification_user_new_posted">%1$s опубликовал новый пост</string>
     <string name="password_toggle_content_description">Показать пароль</string>
     <string name="play_video">Играть видео</string>
     <string name="post_text">Текст поста</string>
+    <string name="retry">Повторить</string>
     <string name="save">Сохранить</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Поиск"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">">999"</string>

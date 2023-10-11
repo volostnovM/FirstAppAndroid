@@ -42,7 +42,11 @@ class PostFragment : Fragment() {
                         PostViewHolder(this, object : OnInteractionListener {
 
                             override fun like(post: Post) {
-                                viewModel.likeById(post.id)
+                                if (post.likedByMe) {
+                                    viewModel.unlikeByIdAsync(post.id)
+                                } else {
+                                    viewModel.likeByIdAsync(post.id)
+                                }
                             }
 
                             override fun share(post: Post) {
@@ -61,7 +65,7 @@ class PostFragment : Fragment() {
                             }
 
                             override fun remove(post: Post) {
-                                viewModel.removeById(post.id)
+                                viewModel.removeByIdAsync(post.id)
                                 findNavController().navigate(
                                     R.id.action_postFragment_to_feedFragment
                                 )
