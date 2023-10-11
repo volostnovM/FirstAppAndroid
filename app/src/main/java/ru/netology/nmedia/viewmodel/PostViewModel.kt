@@ -36,31 +36,36 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun loadPosts() {
-        thread {
-            // Начинаем загрузку
-            _data.postValue(FeedModel(loading = true, refreshing = true))
-            try {
-                // Данные успешно получены
-                val posts = repository.get()
-                FeedModel(posts = posts, empty = posts.isEmpty())
-            } catch (e: IOException) {
-                // Получена ошибка
-                FeedModel(error = true)
-            }.also(_data::postValue)
-        }
+        _data.postValue(FeedModel(loading = true, refreshing = true))
+        repository.getAllAsync(object : PostRepository.RepositoryCallback<List<Post>> {
+            override fun onSuccess(result: List<Post>) {
+                _data.postValue(FeedModel(posts = result, empty = result.isEmpty()))
+            }
+
+            override fun onError(e: Exception) {
+                _data.postValue(FeedModel(error = true))
+            }
+        })
     }
 
     fun changeContentAndSave(content: String) {
-        thread {
-            edited.value?.let {
-                val text = content.trim()
-                if (it.content != content) {
-                    repository.save(it.copy(content = text))
-                    loadPosts()
-                }
+        edited.value?.let {
+            val text = content.trim()
+            if (it.content != content) {
+                repository.saveAsync(
+                    it.copy(content = text),
+                    object : PostRepository.RepositoryCallback<Post> {
+                        override fun onSuccess(result: Post) {
+                            loadPosts()
+                            _postCreated.postValue(Unit)
+                            edited.postValue(empty)
+                        }
+
+                        override fun onError(e: Exception) {
+                            edited.postValue(empty)
+                        }
+                    })
             }
-            _postCreated.postValue(Unit)
-            edited.postValue(empty)
         }
     }
 
@@ -72,64 +77,76 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         edited.value = empty
     }
 
-    fun likeById(id: Long) {
-        thread {
-            val post = repository.likeById(id)
+    fun likeByIdAsync(id: Long) {
+        repository.likeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Post> {
+            override fun onSuccess(result: Post) {
+                val value = _data.value
 
-            val value = _data.value
+                val updatesPosts = value?.posts?.map {
+                    if (it.id == id) {
+                        result
+                    } else {
+                        it
+                    }
+                }.orEmpty()
 
-            val updatesPosts = value?.posts?.map {
-                if(it.id == id) {
-                    post
-                } else {
-                    it
-                }
-            }.orEmpty()
+                _data.postValue(
+                    value?.copy(posts = updatesPosts)
+                )
+            }
 
-            _data.postValue(
-                value?.copy(posts = updatesPosts)
-            )
-        }
+            override fun onError(e: Exception) {
+                println("Упс, произошла ошибка во время простановки лайка")
+            }
+        })
     }
 
-    fun unlikeById(id: Long) {
-        thread {
-            val post = repository.unlikeById(id)
+    fun unlikeByIdAsync(id: Long) {
+        repository.unlikeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Post> {
+            override fun onSuccess(result: Post) {
+                val value = _data.value
 
-            val value = _data.value
+                val updatesPosts = value?.posts?.map {
+                    if (it.id == id) {
+                        result
+                    } else {
+                        it
+                    }
+                }.orEmpty()
 
-            val updatesPosts = value?.posts?.map {
-                if(it.id == id) {
-                    post
-                } else {
-                    it
-                }
-            }.orEmpty()
+                _data.postValue(
+                    value?.copy(posts = updatesPosts)
+                )
+            }
 
-            _data.postValue(
-                value?.copy(posts = updatesPosts)
-            )
-        }
+            override fun onError(e: Exception) {
+                println("Упс, произошла ошибка во время простановки лайка")
+            }
+        })
     }
 
     fun share(id: Long) = repository.share(id)
-    fun removeById(id: Long) {
-        thread {
-            val old = _data.value
+    fun removeByIdAsync(id: Long) {
+        repository.removeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Unit> {
+            override fun onSuccess(result: Unit) {
+                val old = _data.value
 
-            try {
-                repository.removeById(id)
-
-                _data.postValue(
-                    old?.copy(
-                        posts = old.posts.filter {
-                            it.id != id
-                        }
+                try {
+                    _data.postValue(
+                        old?.copy(
+                            posts = old.posts.filter {
+                                it.id != id
+                            }
+                        )
                     )
-                )
-            } catch (e: Exception) {
-                _data.postValue(old)
+                } catch (e: Exception) {
+                    _data.postValue(old)
+                }
             }
-        }
+
+            override fun onError(e: Exception) {
+                println("Упс, произошла ошибка во время удаления поста")
+            }
+        })
     }
 }
