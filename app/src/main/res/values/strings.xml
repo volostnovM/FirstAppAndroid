@@ -28,5 +28,6 @@
     <string name="no_text">No text</string>
     <string name="internet_error">Internet error</string>
     <string name="retry">retry</string>
+    <string name="description_post_attachment">attachment</string>
 
 </resources>

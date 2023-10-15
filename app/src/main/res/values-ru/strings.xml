@@ -29,4 +29,5 @@
     <string name="no_text">Нет постов</string>
     <string name="internet_error">Проблемы с соединением с сервером</string>
     <string name="retry">Повторить</string>
+    <string name="description_post_attachment">Вложение</string>
 </resources>
