@@ -7,6 +7,7 @@
     <string name="channel_remote_description">Уведомление с удаленного сервера</string>
     <string name="channel_remote_name">Уведомление с сервера</string>
     <string name="chooser_share_post">"Выберете пост для отправки "</string>
+    <string name="description_post_attachment">Вложение</string>
     <string name="description_post_save">Кнопка сохранить пост</string>
     <string name="edit_message">Изменить</string>
     <string name="error_action_title">Ошибка</string>

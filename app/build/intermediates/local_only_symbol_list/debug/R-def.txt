@@ -22,10 +22,12 @@ drawable baseline_save_alt_48
 drawable baseline_share_24
 drawable ic_cancel_48
 drawable ic_edit_24
+drawable ic_error_loading_24
 drawable ic_launcher_foreground
 drawable ic_like_24
 drawable ic_like_selector
 drawable ic_liked_24
+drawable ic_loading_24
 drawable ic_notification
 drawable ic_ok_24
 drawable ic_play_circle_24
@@ -35,6 +37,7 @@ id action_feedFragment_to_newPostFragment
 id action_feedFragment_to_postFragment
 id action_postFragment_to_editPostFragment
 id action_postFragment_to_feedFragment
+id attachment
 id author
 id avatar
 id barrierBottomContent
@@ -56,8 +59,6 @@ id nav_host_fragment
 id navig_main
 id newPostFragment
 id ok
-id play
-id playVideoGroup
 id postFragment
 id progress
 id published
@@ -67,7 +68,6 @@ id retryButton
 id saveButton
 id shareButton
 id swipeRefresh
-id video
 id viewButton
 id viewText
 layout activity_app
@@ -88,6 +88,7 @@ string channel_remote_description
 string channel_remote_name
 string chooser_share_post
 string default_web_client_id
+string description_post_attachment
 string description_post_save
 string edit_message
 string error_action_title

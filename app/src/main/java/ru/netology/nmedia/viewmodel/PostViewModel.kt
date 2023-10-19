@@ -41,11 +41,11 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         _data.postValue(FeedModel(loading = true, refreshing = true))
         repository.getAllAsync(object : PostRepository.RepositoryCallback<List<Post>> {
             override fun onSuccess(result: List<Post>) {
-                _data.postValue(FeedModel(posts = result, empty = result.isEmpty()))
+                _data.value = FeedModel(posts = result, empty = result.isEmpty())
             }
 
             override fun onError(e: Exception) {
-                _data.postValue(FeedModel(error = true))
+                _data.value = FeedModel(error = true, errorMessage = e.message.toString())
             }
         })
     }
@@ -60,11 +60,11 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
                         override fun onSuccess(result: Post) {
                             loadPosts()
                             _postCreated.postValue(Unit)
-                            edited.postValue(empty)
+                            edited.value = empty
                         }
 
                         override fun onError(e: Exception) {
-                            edited.postValue(empty)
+                            edited.value = empty
                         }
                     })
             }
@@ -80,9 +80,9 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun likeByIdAsync(id: Long) {
+        val value = _data.value
         repository.likeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Post> {
             override fun onSuccess(result: Post) {
-                val value = _data.value
 
                 val updatesPosts = value?.posts?.map {
                     if (it.id == id) {
@@ -92,21 +92,25 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
                     }
                 }.orEmpty()
 
-                _data.postValue(
-                    value?.copy(posts = updatesPosts)
-                )
+                _data.value = value?.copy(posts = updatesPosts)
+
             }
 
             override fun onError(e: Exception) {
-                println("Упс, произошла ошибка во время простановки лайка")
+                val posts = value!!.posts
+                _data.value = FeedModel(
+                    posts = posts,
+                    errorLike = true,
+                    errorMessage = e.message.toString()
+                )
             }
         })
     }
 
     fun unlikeByIdAsync(id: Long) {
+        val value = _data.value
         repository.unlikeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Post> {
             override fun onSuccess(result: Post) {
-                val value = _data.value
 
                 val updatesPosts = value?.posts?.map {
                     if (it.id == id) {
@@ -116,13 +120,16 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
                     }
                 }.orEmpty()
 
-                _data.postValue(
-                    value?.copy(posts = updatesPosts)
-                )
+                _data.value = value?.copy(posts = updatesPosts)
             }
 
             override fun onError(e: Exception) {
-                println("Упс, произошла ошибка во время простановки лайка")
+                val posts = value!!.posts
+                _data.value = FeedModel(
+                    posts = posts,
+                    errorLike = true,
+                    errorMessage = e.message.toString()
+                )
             }
         })
     }
@@ -134,20 +141,19 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
                 val old = _data.value
 
                 try {
-                    _data.postValue(
+                    _data.value =
                         old?.copy(
                             posts = old.posts.filter {
                                 it.id != id
                             }
                         )
-                    )
                 } catch (e: Exception) {
-                    _data.postValue(old)
+                    _data.value = old
                 }
             }
 
             override fun onError(e: Exception) {
-                println("Упс, произошла ошибка во время удаления поста")
+                _data.value = FeedModel(error = true, errorMessage = e.message.toString())
             }
         })
     }
