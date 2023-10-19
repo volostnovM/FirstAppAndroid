@@ -20,10 +20,10 @@ interface PostsApiService {
     @GET("posts")
     fun getAll(): Call<List<Post>>
 
-    @POST("post/{id}/likes")
+    @POST("posts/{id}/likes")
     fun likeByIdAsync(@Path("id") id: Long): Call<Post>
 
-    @DELETE("post/{id}/likes")
+    @DELETE("posts/{id}/likes")
     fun unlikeByIdAsync(@Path("id") id: Long): Call<Post>
 
     @DELETE("posts/{id}")

@@ -104,7 +104,19 @@ class FeedFragment : Fragment() {
                     binding.root,
                     state.errorMessage,
                     BaseTransientBottomBar.LENGTH_LONG
-                ).show()
+                )
+                    .setAnchorView(binding.fab)
+                    .show()
+            }
+
+            if (state.errorLike) {
+                Snackbar.make(
+                    binding.root,
+                    state.errorMessage,
+                    BaseTransientBottomBar.LENGTH_LONG
+                )
+                    .setAnchorView(binding.fab)
+                    .show()
             }
         }
 

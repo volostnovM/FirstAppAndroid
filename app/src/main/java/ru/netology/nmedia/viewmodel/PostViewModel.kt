@@ -80,9 +80,9 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun likeByIdAsync(id: Long) {
+        val value = _data.value
         repository.likeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Post> {
             override fun onSuccess(result: Post) {
-                val value = _data.value
 
                 val updatesPosts = value?.posts?.map {
                     if (it.id == id) {
@@ -97,15 +97,20 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
             }
 
             override fun onError(e: Exception) {
-                _data.value = FeedModel(error = true, errorMessage = e.message.toString())
+                val posts = value!!.posts
+                _data.value = FeedModel(
+                    posts = posts,
+                    errorLike = true,
+                    errorMessage = e.message.toString()
+                )
             }
         })
     }
 
     fun unlikeByIdAsync(id: Long) {
+        val value = _data.value
         repository.unlikeByIdAsync(id = id, object : PostRepository.RepositoryCallback<Post> {
             override fun onSuccess(result: Post) {
-                val value = _data.value
 
                 val updatesPosts = value?.posts?.map {
                     if (it.id == id) {
@@ -119,7 +124,12 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
             }
 
             override fun onError(e: Exception) {
-                _data.value = FeedModel(error = true, errorMessage = e.message.toString())
+                val posts = value!!.posts
+                _data.value = FeedModel(
+                    posts = posts,
+                    errorLike = true,
+                    errorMessage = e.message.toString()
+                )
             }
         })
     }
@@ -131,13 +141,12 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
                 val old = _data.value
 
                 try {
-                    _data.postValue(
+                    _data.value =
                         old?.copy(
                             posts = old.posts.filter {
                                 it.id != id
                             }
                         )
-                    )
                 } catch (e: Exception) {
                     _data.value = old
                 }
