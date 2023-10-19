@@ -3030,11 +3030,13 @@ drawable ic_cancel_48
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_edit_24
+drawable ic_error_loading_24
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
 drawable ic_like_24
 drawable ic_like_selector
 drawable ic_liked_24
+drawable ic_loading_24
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -3212,6 +3214,7 @@ id anticipate
 id arc
 id asConfigured
 id async
+id attachment
 id author
 id auto
 id autoComplete
@@ -3344,6 +3347,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -3491,8 +3495,6 @@ id pathRelative
 id peekHeight
 id percent
 id pin
-id play
-id playVideoGroup
 id pooling_container_listener_holder_tag
 id position
 id postFragment
@@ -3649,7 +3651,6 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
-id video
 id viewButton
 id viewText
 id view_offset_helper
@@ -3946,6 +3947,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
+string description_post_attachment
 string description_post_save
 string dest_title
 string edit_message

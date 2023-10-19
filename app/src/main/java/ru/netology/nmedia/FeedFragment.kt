@@ -10,6 +10,8 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import ru.netology.nmedia.activity.EditPostFragment.Companion.textArg
 import ru.netology.nmedia.activity.PostFragment.Companion.idArg
 import ru.netology.nmedia.adapter.OnInteractionListener
@@ -96,6 +98,14 @@ class FeedFragment : Fragment() {
             binding.errorGroup.isVisible = state.error
             binding.emptyTextView.isVisible = state.empty
             binding.swipeRefresh.isRefreshing = state.refreshing
+
+            if (state.error) {
+                Snackbar.make(
+                    binding.root,
+                    state.errorMessage,
+                    BaseTransientBottomBar.LENGTH_LONG
+                ).show()
+            }
         }
 
         binding.retryButton.setOnClickListener {

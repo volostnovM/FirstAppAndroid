@@ -70,36 +70,19 @@
         app:layout_constraintTop_toBottomOf="@id/barrierTop"
         tools:text="@sample/posts.json/data/content" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/playVideoGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="video, play" />
-
     <ImageView
-        android:id="@+id/video"
+        android:id="@+id/attachment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_video"
-        android:contentDescription="@string/video"
-        app:layout_constraintTop_toBottomOf="@+id/content"
+        android:contentDescription="@string/description_post_attachment"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/barrierBottomContent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <ImageButton
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_play_circle_24"
-        android:contentDescription="@string/play_video"
-        app:layout_constraintBottom_toBottomOf="@id/video"
-        app:layout_constraintEnd_toEndOf="@id/video"
-        app:layout_constraintStart_toStartOf="@id/video"
-        app:layout_constraintTop_toTopOf="@id/video" />
+        app:layout_constraintTop_toBottomOf="@+id/content"
+        tools:srcCompat="@sample/posts_avatars"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrierBottomContent"

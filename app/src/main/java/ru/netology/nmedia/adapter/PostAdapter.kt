@@ -64,6 +64,7 @@ class PostViewHolder(
             likeButton.isChecked = post.likedByMe
             likeButton.text = post.likes.toString()
             likeButton.setOnClickListener {
+                likeButton.isChecked = !likeButton.isChecked
                 onInteractionListener.like(post)
             }
 
@@ -91,16 +92,6 @@ class PostViewHolder(
                     }
                 }.show()
             }
-
-//            if (post.video == null) {
-//                binding.playVideoGroup.visibility = View.GONE
-//            } else {
-//                binding.playVideoGroup.visibility = View.VISIBLE
-//            }
-//
-//            play.setOnClickListener { onInteractionListener.video(post) }
-//            video.setOnClickListener { onInteractionListener.video(post) }
-
             root.setOnClickListener { onInteractionListener.viewPost(post) }
         }
     }

@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.Barrier;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.Group;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
@@ -23,6 +22,9 @@ import ru.netology.nmedia.R;
 public final class CardPostBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final ImageView attachment;
 
   @NonNull
   public final TextView author;
@@ -46,19 +48,10 @@ public final class CardPostBinding implements ViewBinding {
   public final MaterialButton menu;
 
   @NonNull
-  public final ImageButton play;
-
-  @NonNull
-  public final Group playVideoGroup;
-
-  @NonNull
   public final TextView published;
 
   @NonNull
   public final MaterialButton shareButton;
-
-  @NonNull
-  public final ImageView video;
 
   @NonNull
   public final ImageButton viewButton;
@@ -66,13 +59,14 @@ public final class CardPostBinding implements ViewBinding {
   @NonNull
   public final TextView viewText;
 
-  private CardPostBinding(@NonNull ConstraintLayout rootView, @NonNull TextView author,
-      @NonNull ImageView avatar, @NonNull Barrier barrierBottomContent, @NonNull Barrier barrierTop,
-      @NonNull TextView content, @NonNull MaterialButton likeButton, @NonNull MaterialButton menu,
-      @NonNull ImageButton play, @NonNull Group playVideoGroup, @NonNull TextView published,
-      @NonNull MaterialButton shareButton, @NonNull ImageView video,
-      @NonNull ImageButton viewButton, @NonNull TextView viewText) {
+  private CardPostBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView attachment,
+      @NonNull TextView author, @NonNull ImageView avatar, @NonNull Barrier barrierBottomContent,
+      @NonNull Barrier barrierTop, @NonNull TextView content, @NonNull MaterialButton likeButton,
+      @NonNull MaterialButton menu, @NonNull TextView published,
+      @NonNull MaterialButton shareButton, @NonNull ImageButton viewButton,
+      @NonNull TextView viewText) {
     this.rootView = rootView;
+    this.attachment = attachment;
     this.author = author;
     this.avatar = avatar;
     this.barrierBottomContent = barrierBottomContent;
@@ -80,11 +74,8 @@ public final class CardPostBinding implements ViewBinding {
     this.content = content;
     this.likeButton = likeButton;
     this.menu = menu;
-    this.play = play;
-    this.playVideoGroup = playVideoGroup;
     this.published = published;
     this.shareButton = shareButton;
-    this.video = video;
     this.viewButton = viewButton;
     this.viewText = viewText;
   }
@@ -116,6 +107,12 @@ public final class CardPostBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.attachment;
+      ImageView attachment = ViewBindings.findChildViewById(rootView, id);
+      if (attachment == null) {
+        break missingId;
+      }
+
       id = R.id.author;
       TextView author = ViewBindings.findChildViewById(rootView, id);
       if (author == null) {
@@ -158,18 +155,6 @@ public final class CardPostBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.play;
-      ImageButton play = ViewBindings.findChildViewById(rootView, id);
-      if (play == null) {
-        break missingId;
-      }
-
-      id = R.id.playVideoGroup;
-      Group playVideoGroup = ViewBindings.findChildViewById(rootView, id);
-      if (playVideoGroup == null) {
-        break missingId;
-      }
-
       id = R.id.published;
       TextView published = ViewBindings.findChildViewById(rootView, id);
       if (published == null) {
@@ -179,12 +164,6 @@ public final class CardPostBinding implements ViewBinding {
       id = R.id.shareButton;
       MaterialButton shareButton = ViewBindings.findChildViewById(rootView, id);
       if (shareButton == null) {
-        break missingId;
-      }
-
-      id = R.id.video;
-      ImageView video = ViewBindings.findChildViewById(rootView, id);
-      if (video == null) {
         break missingId;
       }
 
@@ -200,9 +179,9 @@ public final class CardPostBinding implements ViewBinding {
         break missingId;
       }
 
-      return new CardPostBinding((ConstraintLayout) rootView, author, avatar, barrierBottomContent,
-          barrierTop, content, likeButton, menu, play, playVideoGroup, published, shareButton,
-          video, viewButton, viewText);
+      return new CardPostBinding((ConstraintLayout) rootView, attachment, author, avatar,
+          barrierBottomContent, barrierTop, content, likeButton, menu, published, shareButton,
+          viewButton, viewText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

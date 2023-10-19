@@ -73,6 +73,7 @@
     <string name="common_open_on_phone">Открыть на телефоне</string>
     <string name="common_signin_button_text">Войти</string>
     <string name="common_signin_button_text_long">Войти через аккаунт Google</string>
+    <string name="description_post_attachment">Вложение</string>
     <string name="description_post_save">Кнопка сохранить пост</string>
     <string name="edit_message">Изменить</string>
     <string name="error_action_title">Ошибка</string>
