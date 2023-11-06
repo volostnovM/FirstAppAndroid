@@ -39,9 +39,9 @@ public final class AppDb_Impl extends AppDb {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `PostEntity` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `author` TEXT NOT NULL, `published` TEXT NOT NULL, `content` TEXT NOT NULL, `likedByMe` INTEGER NOT NULL, `likes` INTEGER NOT NULL, `shared` INTEGER NOT NULL, `video` TEXT)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `PostEntity` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `author` TEXT NOT NULL, `authorAvatar` TEXT NOT NULL, `published` TEXT NOT NULL, `content` TEXT NOT NULL, `likedByMe` INTEGER NOT NULL, `likes` INTEGER NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e62013a8a8683f0c47b3fdbb75610d8a')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cdf4a1adcbb8011c5d637fa8299a79c5')");
       }
 
       @Override
@@ -85,15 +85,14 @@ public final class AppDb_Impl extends AppDb {
 
       @Override
       public RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsPostEntity = new HashMap<String, TableInfo.Column>(8);
+        final HashMap<String, TableInfo.Column> _columnsPostEntity = new HashMap<String, TableInfo.Column>(7);
         _columnsPostEntity.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPostEntity.put("author", new TableInfo.Column("author", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPostEntity.put("authorAvatar", new TableInfo.Column("authorAvatar", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPostEntity.put("published", new TableInfo.Column("published", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPostEntity.put("content", new TableInfo.Column("content", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPostEntity.put("likedByMe", new TableInfo.Column("likedByMe", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPostEntity.put("likes", new TableInfo.Column("likes", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsPostEntity.put("shared", new TableInfo.Column("shared", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsPostEntity.put("video", new TableInfo.Column("video", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysPostEntity = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesPostEntity = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoPostEntity = new TableInfo("PostEntity", _columnsPostEntity, _foreignKeysPostEntity, _indicesPostEntity);
@@ -105,7 +104,7 @@ public final class AppDb_Impl extends AppDb {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "e62013a8a8683f0c47b3fdbb75610d8a", "6188d5fec2137fc10506cf20f9a7e431");
+    }, "cdf4a1adcbb8011c5d637fa8299a79c5", "065734f88ee834eabfeffac14a0a2b2c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

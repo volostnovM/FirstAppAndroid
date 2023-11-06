@@ -34,14 +34,13 @@ class FeedFragment : Fragment() {
         val adapter = PostsAdapter(object : OnInteractionListener {
             override fun like(post: Post) {
                 if (post.likedByMe) {
-                    viewModel.unlikeByIdAsync(post.id)
+                    viewModel.unlikeById(post.id)
                 } else {
-                    viewModel.likeByIdAsync(post.id)
+                    viewModel.likeById(post.id)
                 }
             }
 
             override fun share(post: Post) {
-                viewModel.share(post.id)
                 val intent = Intent().apply {
                     action = Intent.ACTION_SEND
                     putExtra(Intent.EXTRA_TEXT, post.content)
@@ -54,7 +53,7 @@ class FeedFragment : Fragment() {
             }
 
             override fun remove(post: Post) {
-                viewModel.removeByIdAsync(post.id)
+                viewModel.removeById(post.id)
             }
 
             override fun edit(post: Post) {
@@ -68,8 +67,8 @@ class FeedFragment : Fragment() {
             }
 
             override fun video(post: Post) {
-                val videoIntent = Intent(Intent.ACTION_VIEW, Uri.parse(post.video))
-                startActivity(videoIntent)
+//                val videoIntent = Intent(Intent.ACTION_VIEW, Uri.parse(post.video))
+//                startActivity(videoIntent)
             }
 
             override fun viewPost(post: Post) {
@@ -93,10 +92,13 @@ class FeedFragment : Fragment() {
                     binding.recyclerList.smoothScrollToPosition(0)
                 }
             }
+            binding.emptyTextView.isVisible = state.empty
+        }
+
+        viewModel.state.observe(viewLifecycleOwner) { state ->
 
             binding.progress.isVisible = state.loading
             binding.errorGroup.isVisible = state.error
-            binding.emptyTextView.isVisible = state.empty
             binding.swipeRefresh.isRefreshing = state.refreshing
 
             if (state.error) {
@@ -125,7 +127,7 @@ class FeedFragment : Fragment() {
         }
 
         binding.swipeRefresh.setOnRefreshListener {
-            viewModel.loadPosts()
+            viewModel.refreshPosts()
         }
 
         binding.fab.setOnClickListener {

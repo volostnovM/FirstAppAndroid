@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-56:/values/values.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-57:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\e4135cd8f6869289610db9be6ce98945\\transformed\\viewpager2-1.1.0-beta02\\res\\values\\values.xml",

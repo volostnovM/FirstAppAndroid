@@ -1,26 +1,26 @@
 [
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-57:/layout/card_post.xml",
-        "source": "ru.netology.nmedia.app-main-60:/layout/card_post.xml"
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_post.xml",
+        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-57:/layout/fragment_post.xml",
-        "source": "ru.netology.nmedia.app-main-60:/layout/fragment_post.xml"
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/card_post.xml",
+        "source": "ru.netology.nmedia.app-main-61:/layout/card_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-57:/layout/fragment_new_post.xml",
-        "source": "ru.netology.nmedia.app-main-60:/layout/fragment_new_post.xml"
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/activity_app.xml",
+        "source": "ru.netology.nmedia.app-main-61:/layout/activity_app.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-57:/layout/fragment_edit_post.xml",
-        "source": "ru.netology.nmedia.app-main-60:/layout/fragment_edit_post.xml"
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_new_post.xml",
+        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_new_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-57:/layout/activity_app.xml",
-        "source": "ru.netology.nmedia.app-main-60:/layout/activity_app.xml"
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_edit_post.xml",
+        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_edit_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-57:/layout/fragment_feed.xml",
-        "source": "ru.netology.nmedia.app-main-60:/layout/fragment_feed.xml"
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_feed.xml",
+        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_feed.xml"
     }
 ]

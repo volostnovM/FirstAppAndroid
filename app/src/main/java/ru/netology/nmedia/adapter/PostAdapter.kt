@@ -46,7 +46,6 @@ class PostViewHolder(
             author.text = post.author
             published.text = post.published
             content.text = post.content
-            shareButton.text = post.shared.toString()
 
             val options = RequestOptions().circleCrop()
             val url = "http://10.0.2.2:9999/avatars/${post.authorAvatar}"
