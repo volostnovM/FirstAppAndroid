@@ -29,5 +29,6 @@
     <string name="internet_error">Internet error</string>
     <string name="retry">retry</string>
     <string name="description_post_attachment">attachment</string>
+    <string name="error_send_message">Error send</string>
 
 </resources>

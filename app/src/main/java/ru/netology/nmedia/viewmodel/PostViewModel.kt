@@ -42,8 +42,7 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     private val edited = MutableLiveData(empty)
 
     private val _dataState = MutableLiveData<FeedModelState>()
-    val state: LiveData<FeedModelState>
-        get() = _dataState
+    val state: LiveData<FeedModelState> get() = _dataState
 
     init {
         loadPosts()

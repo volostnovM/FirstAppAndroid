@@ -42,13 +42,13 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun likeById(id: Long) {
         try {
-            dao.likeById(id)
             val response = PostsApi.retrofitService.likeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
             val body = response.body() ?: throw ApiException(response.code(), response.message())
-            dao.insert(PostEntity.fromDto(body))
+            dao.likeById(id)
+            //dao.insert(PostEntity.fromDto(body))
         } catch (e: IOException) {
             throw NetworkException
         } catch (e: Exception) {
@@ -58,13 +58,13 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun unlikeById(id: Long) {
         try {
-            dao.likeById(id)
             val response = PostsApi.retrofitService.unlikeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
             val body = response.body() ?: throw ApiException(response.code(), response.message())
-            dao.insert(PostEntity.fromDto(body))
+            dao.likeById(id)
+            //dao.insert(PostEntity.fromDto(body))
         } catch (e: IOException) {
             throw NetworkException
         } catch (e: Exception) {
@@ -75,11 +75,11 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun removeById(id: Long) {
         try {
-            dao.removeById(id)
             val response = PostsApi.retrofitService.removeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
+            dao.removeById(id)
         } catch (e: IOException) {
             throw NetworkException
         } catch (e: Exception) {

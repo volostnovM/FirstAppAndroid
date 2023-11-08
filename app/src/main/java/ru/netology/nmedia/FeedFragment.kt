@@ -1,7 +1,6 @@
 package ru.netology.nmedia
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -98,15 +97,17 @@ class FeedFragment : Fragment() {
         viewModel.state.observe(viewLifecycleOwner) { state ->
 
             binding.progress.isVisible = state.loading
-            binding.errorGroup.isVisible = state.error
             binding.swipeRefresh.isRefreshing = state.refreshing
 
             if (state.error) {
                 Snackbar.make(
                     binding.root,
-                    state.errorMessage,
+                    getString(R.string.error_send_message),
                     BaseTransientBottomBar.LENGTH_LONG
                 )
+                    .setAction("RETRY", View.OnClickListener {
+                    viewModel.loadPosts()
+                })
                     .setAnchorView(binding.fab)
                     .show()
             }
@@ -114,13 +115,20 @@ class FeedFragment : Fragment() {
             if (state.errorLike) {
                 Snackbar.make(
                     binding.root,
-                    state.errorMessage,
+                    getString(R.string.error_send_message),
                     BaseTransientBottomBar.LENGTH_LONG
                 )
+                    .setAction("RETRY", View.OnClickListener {
+                        viewModel.loadPosts()
+                    })
                     .setAnchorView(binding.fab)
                     .show()
             }
         }
+
+//        var actionOnClickListener: View.OnClickListener = View.OnClickListener {
+//            viewModel.loadPosts()
+//        }
 
         binding.retryButton.setOnClickListener {
             viewModel.loadPosts()
@@ -136,4 +144,6 @@ class FeedFragment : Fragment() {
 
         return binding.root
     }
+
+
 }

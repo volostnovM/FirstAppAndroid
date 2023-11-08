@@ -30,4 +30,5 @@
     <string name="internet_error">Проблемы с соединением с сервером</string>
     <string name="retry">Повторить</string>
     <string name="description_post_attachment">Вложение</string>
+    <string name="error_send_message">Произошла ошибка запроса</string>
 </resources>

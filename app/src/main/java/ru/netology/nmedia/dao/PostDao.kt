@@ -32,14 +32,6 @@ interface PostDao {
         """)
     suspend fun likeById(id: Long)
 
-//    @Query(
-//        """
-//        UPDATE PostEntity SET
-//                shared = shared + 1
-//                WHERE id = :id
-//        """
-//    )
-//    suspend fun shareById(id: Long)
     @Query("DELETE FROM PostEntity WHERE id = :id")
     suspend fun removeById(id: Long)
 
