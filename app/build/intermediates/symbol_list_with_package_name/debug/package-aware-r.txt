@@ -3955,6 +3955,7 @@ string error_a11y_label
 string error_action_title
 string error_empty_content
 string error_icon_content_description
+string error_send_message
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior

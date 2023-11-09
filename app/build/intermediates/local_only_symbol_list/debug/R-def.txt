@@ -93,6 +93,7 @@ string description_post_save
 string edit_message
 string error_action_title
 string error_empty_content
+string error_send_message
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

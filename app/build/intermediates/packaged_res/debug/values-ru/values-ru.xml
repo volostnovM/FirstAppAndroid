@@ -12,6 +12,7 @@
     <string name="edit_message">Изменить</string>
     <string name="error_action_title">Ошибка</string>
     <string name="error_empty_content">Поле не может быть пустым</string>
+    <string name="error_send_message">Произошла ошибка запроса</string>
     <string name="icon_edit">Иконка изменить</string>
     <string name="icon_like">Иконка нравится</string>
     <string name="icon_share">Иконка поделиться</string>

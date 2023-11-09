@@ -20,7 +20,9 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
         private val jsonType = "application/json".toMediaType()
     }
 
-    override val data = dao.getAll().map { it.toDto() }
+    override val data = dao.getAll().map {
+        it.toDto()
+    }
 
     override suspend fun getAll() {
         try {
@@ -42,32 +44,34 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun likeById(id: Long) {
         try {
+            dao.likeById(id)
             val response = PostsApi.retrofitService.likeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
             val body = response.body() ?: throw ApiException(response.code(), response.message())
-            dao.likeById(id)
-            //dao.insert(PostEntity.fromDto(body))
         } catch (e: IOException) {
+            dao.likeById(id)
             throw NetworkException
         } catch (e: Exception) {
+            dao.likeById(id)
             throw UnknownException
         }
     }
 
     override suspend fun unlikeById(id: Long) {
         try {
+            dao.likeById(id)
             val response = PostsApi.retrofitService.unlikeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
             val body = response.body() ?: throw ApiException(response.code(), response.message())
-            dao.likeById(id)
-            //dao.insert(PostEntity.fromDto(body))
         } catch (e: IOException) {
+            dao.likeById(id)
             throw NetworkException
         } catch (e: Exception) {
+            dao.likeById(id)
             throw UnknownException
         }
     }

@@ -79,6 +79,7 @@
     <string name="error_action_title">Ошибка</string>
     <string name="error_empty_content">Поле не может быть пустым</string>
     <string name="error_icon_content_description">Ошибка</string>
+    <string name="error_send_message">Произошла ошибка запроса</string>
     <string name="exposed_dropdown_menu_content_description">Показать раскрывающееся меню</string>
     <string name="icon_content_description">Значок диалогового окна</string>
     <string name="icon_edit">Иконка изменить</string>
