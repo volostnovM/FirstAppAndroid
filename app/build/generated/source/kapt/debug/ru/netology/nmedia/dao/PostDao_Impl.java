@@ -1,7 +1,6 @@
 package ru.netology.nmedia.dao;
 
 import android.database.Cursor;
-import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -22,6 +21,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
+import kotlinx.coroutines.flow.Flow;
 import ru.netology.nmedia.entity.PostEntity;
 
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -29,6 +29,8 @@ public final class PostDao_Impl implements PostDao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<PostEntity> __insertionAdapterOfPostEntity;
+
+  private final SharedSQLiteStatement __preparedStmtOfHiddenPosts;
 
   private final SharedSQLiteStatement __preparedStmtOfUpdateContentById;
 
@@ -41,7 +43,7 @@ public final class PostDao_Impl implements PostDao {
     this.__insertionAdapterOfPostEntity = new EntityInsertionAdapter<PostEntity>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `PostEntity` (`id`,`author`,`authorAvatar`,`published`,`content`,`likedByMe`,`likes`) VALUES (nullif(?, 0),?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `PostEntity` (`id`,`author`,`authorAvatar`,`published`,`content`,`likedByMe`,`likes`,`hidden`) VALUES (nullif(?, 0),?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -70,6 +72,15 @@ public final class PostDao_Impl implements PostDao {
         final int _tmp = value.getLikedByMe() ? 1 : 0;
         stmt.bindLong(6, _tmp);
         stmt.bindLong(7, value.getLikes());
+        final int _tmp_1 = value.getHidden() ? 1 : 0;
+        stmt.bindLong(8, _tmp_1);
+      }
+    };
+    this.__preparedStmtOfHiddenPosts = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE PostEntity SET hidden = 1 WHERE hidden = 0";
+        return _query;
       }
     };
     this.__preparedStmtOfUpdateContentById = new SharedSQLiteStatement(__db) {
@@ -129,6 +140,25 @@ public final class PostDao_Impl implements PostDao {
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object hiddenPosts(final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfHiddenPosts.acquire();
+        __db.beginTransaction();
+        try {
+          _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfHiddenPosts.release(_stmt);
         }
       }
     }, $completion);
@@ -205,10 +235,10 @@ public final class PostDao_Impl implements PostDao {
   }
 
   @Override
-  public LiveData<List<PostEntity>> getAll() {
-    final String _sql = "SELECT * FROM PostEntity ORDER BY id DESC";
+  public Flow<List<PostEntity>> getAll() {
+    final String _sql = "SELECT * FROM PostEntity WHERE hidden = 1 ORDER BY id DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[]{"PostEntity"}, false, new Callable<List<PostEntity>>() {
+    return CoroutinesRoom.createFlow(__db, false, new String[]{"PostEntity"}, new Callable<List<PostEntity>>() {
       @Override
       public List<PostEntity> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
@@ -220,6 +250,7 @@ public final class PostDao_Impl implements PostDao {
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfLikedByMe = CursorUtil.getColumnIndexOrThrow(_cursor, "likedByMe");
           final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
+          final int _cursorIndexOfHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "hidden");
           final List<PostEntity> _result = new ArrayList<PostEntity>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final PostEntity _item;
@@ -255,7 +286,11 @@ public final class PostDao_Impl implements PostDao {
             _tmpLikedByMe = _tmp != 0;
             final int _tmpLikes;
             _tmpLikes = _cursor.getInt(_cursorIndexOfLikes);
-            _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes);
+            final boolean _tmpHidden;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfHidden);
+            _tmpHidden = _tmp_1 != 0;
+            _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes,_tmpHidden);
             _result.add(_item);
           }
           return _result;

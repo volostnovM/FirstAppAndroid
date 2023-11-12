@@ -30,5 +30,6 @@
     <string name="retry">retry</string>
     <string name="description_post_attachment">attachment</string>
     <string name="error_send_message">Error send</string>
+    <string name="new_post">new posts</string>
 
 </resources>

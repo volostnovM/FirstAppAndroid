@@ -81,4 +81,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_ok_24" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/newPosts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/new_post"
+        android:visibility="gone"
+        app:cornerRadius="@dimen/common_padding"
+        app:icon="@drawable/ic_new_posts_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

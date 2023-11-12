@@ -31,4 +31,5 @@
     <string name="retry">Повторить</string>
     <string name="description_post_attachment">Вложение</string>
     <string name="error_send_message">Произошла ошибка запроса</string>
+    <string name="new_post">Новые посты</string>
 </resources>

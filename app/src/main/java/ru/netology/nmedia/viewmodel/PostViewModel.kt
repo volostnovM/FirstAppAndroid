@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import ru.netology.nmedia.db.AppDb
 import ru.netology.nmedia.dto.Post
@@ -14,8 +14,11 @@ import ru.netology.nmedia.model.FeedModelState
 import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.repository.PostRepositoryOkHTTTP
 import ru.netology.nmedia.util.SingleLiveEvent
-import java.io.IOException
-import kotlin.concurrent.thread
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.switchMap
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.catch
+
 
 private val empty = Post(
     id = 0,
@@ -35,9 +38,17 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
     val postCreated: LiveData<Unit>
         get() = _postCreated
 
-    val data: LiveData<FeedModel> = repository.data.map {
-        FeedModel(posts = it, empty = it.isEmpty())
+    val data: LiveData<FeedModel> = repository.data
+        .map { FeedModel(posts = it, empty = it.isEmpty()) }
+        .catch { it.printStackTrace() }
+        .asLiveData(Dispatchers.Default)
+
+    val newerCount = data.switchMap {
+        repository.getNewer(it.posts.firstOrNull()?.id ?: 0L)
+            .catch { it.printStackTrace() }
+            .asLiveData(Dispatchers.Default)
     }
+
 
     private val edited = MutableLiveData(empty)
 
@@ -52,6 +63,16 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         try {
             _dataState.value = FeedModelState(loading = true)
             repository.getAll()
+            _dataState.value = FeedModelState()
+        } catch (e: Exception) {
+            _dataState.value = FeedModelState(error = true)
+        }
+    }
+
+    fun loadNewPosts() = viewModelScope.launch {
+        try {
+            _dataState.value = FeedModelState(loading = true)
+            repository.getNewPosts()
             _dataState.value = FeedModelState()
         } catch (e: Exception) {
             _dataState.value = FeedModelState(error = true)

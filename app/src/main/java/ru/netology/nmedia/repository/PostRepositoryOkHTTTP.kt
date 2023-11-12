@@ -1,6 +1,10 @@
 package ru.netology.nmedia.repository
 
 import androidx.lifecycle.map
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import okhttp3.MediaType.Companion.toMediaType
 import ru.netology.nmedia.api.PostsApi
 import ru.netology.nmedia.dao.PostDao
@@ -31,7 +35,11 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
                 throw ApiException(response.code(), response.message())
             }
             val body = response.body() ?: throw ApiException(response.code(), response.message())
-            dao.insert(body.toEntity())
+            //dao.insert(body.toEntity())
+            dao.insert(body.toEntity()
+                .map {
+                    it.copy(hidden = true)
+                })
         } catch (e: ApiException) {
             throw e
         } catch (e: IOException) {
@@ -41,6 +49,38 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
         }
     }
 
+    override fun getNewer(id: Long): Flow<Int> = flow {
+        while (true) {
+            delay(10_000L)
+
+            try {
+                val response = PostsApi.retrofitService.getNewer(id)
+                if (!response.isSuccessful) {
+                    throw ApiException(response.code(), response.message())
+                }
+                val body =
+                    response.body() ?: throw ApiException(response.code(), response.message())
+                dao.insert(body.toEntity())
+                emit(body.size)
+            } catch (e: ApiException) {
+                throw e
+            } catch (e: IOException) {
+                throw NetworkException
+            } catch (e: Exception) {
+                throw UnknownException
+            }
+        }
+    }
+
+    override suspend fun getNewPosts() {
+        try {
+            dao.hiddenPosts()
+        } catch (e: IOException) {
+            throw NetworkException
+        } catch (e: Exception) {
+            throw UnknownException
+        }
+    }
 
     override suspend fun likeById(id: Long) {
         try {

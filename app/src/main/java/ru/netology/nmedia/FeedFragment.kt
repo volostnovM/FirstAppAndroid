@@ -106,8 +106,8 @@ class FeedFragment : Fragment() {
                     BaseTransientBottomBar.LENGTH_LONG
                 )
                     .setAction("RETRY", View.OnClickListener {
-                    viewModel.loadPosts()
-                })
+                        viewModel.loadPosts()
+                    })
                     .setAnchorView(binding.fab)
                     .show()
             }
@@ -126,9 +126,16 @@ class FeedFragment : Fragment() {
             }
         }
 
-//        var actionOnClickListener: View.OnClickListener = View.OnClickListener {
-//            viewModel.loadPosts()
-//        }
+        viewModel.newerCount.observe(viewLifecycleOwner) {
+            if (it > 0) {
+                binding.newPosts.visibility = View.VISIBLE
+            }
+        }
+
+        binding.newPosts.setOnClickListener {
+            binding.newPosts.visibility = View.GONE
+            viewModel.loadNewPosts()
+        }
 
         binding.retryButton.setOnClickListener {
             viewModel.loadPosts()

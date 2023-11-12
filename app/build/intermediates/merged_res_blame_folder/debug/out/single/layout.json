@@ -1,26 +1,30 @@
 [
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_post.xml",
-        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_post.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-mergeDebugResources-59:\\layout\\activity_app.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-62:\\layout\\activity_app.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/card_post.xml",
-        "source": "ru.netology.nmedia.app-main-61:/layout/card_post.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-mergeDebugResources-59:\\layout\\fragment_post.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-62:\\layout\\fragment_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/activity_app.xml",
-        "source": "ru.netology.nmedia.app-main-61:/layout/activity_app.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-mergeDebugResources-59:\\layout\\fragment_new_post.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-62:\\layout\\fragment_new_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_new_post.xml",
-        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_new_post.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-mergeDebugResources-59:\\layout\\fragment_feed.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-62:\\layout\\fragment_feed.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_edit_post.xml",
-        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_edit_post.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-mergeDebugResources-59:\\layout\\card_post.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-62:\\layout\\card_post.xml"
     },
     {
-        "merged": "ru.netology.nmedia.app-mergeDebugResources-58:/layout/fragment_feed.xml",
-        "source": "ru.netology.nmedia.app-main-61:/layout/fragment_feed.xml"
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-mergeDebugResources-59:\\layout\\fragment_edit_post.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\8.0\\ru.netology.nmedia.app-main-62:\\layout\\fragment_edit_post.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-59:/layout/fragment_feed.xml",
+        "source": "ru.netology.nmedia.app-main-62:/layout/fragment_feed.xml"
     }
 ]
