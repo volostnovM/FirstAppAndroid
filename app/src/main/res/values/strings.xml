@@ -6,4 +6,30 @@
     <string name="icon_like">icon like</string>
     <string name="icon_share">icon share</string>
     <string name="icon_view">icon view</string>
+    <string name="menu_remove">remove</string>
+    <string name="menu_edit">edit</string>
+    <string name="post_text">Post text</string>
+    <string name="error_empty_content">Error empty content</string>
+    <string name="icon_edit">icon_edit</string>
+    <string name="edit_message">Edit message</string>
+    <string name="text_netology">Netology</string>
+    <string name="description_post_save">description_post_save</string>
+    <string name="chooser_share_post">choose share post</string>
+    <string name="add_post">add post</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+    <string name="video">video</string>
+    <string name="play_video">play video</string>
+    <string name="channel_remote_name">channel remote name</string>
+    <string name="channel_remote_description">Notification from remote server</string>
+    <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
+    <string name="notification_user_new_posted">%1$s posted a new post</string>
+    <string name="error_action_title">Error</string>
+    <string name="no_text">No text</string>
+    <string name="internet_error">Internet error</string>
+    <string name="retry">retry</string>
+    <string name="description_post_attachment">attachment</string>
+    <string name="error_send_message">Error send</string>
+    <string name="new_post">new posts</string>
+
 </resources>
