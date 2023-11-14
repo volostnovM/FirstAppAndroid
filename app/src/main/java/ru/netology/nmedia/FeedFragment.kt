@@ -78,6 +78,15 @@ class FeedFragment : Fragment() {
                     }
                 )
             }
+
+            override fun onImage(image: String) {
+                findNavController().navigate(
+                    R.id.action_feedFragment_to_imageFragment,
+                    Bundle().apply {
+                        putString("image", image)
+                    }
+                )
+            }
         }
         )
 

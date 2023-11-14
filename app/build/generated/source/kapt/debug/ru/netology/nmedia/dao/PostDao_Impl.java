@@ -11,6 +11,7 @@ import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.IllegalArgumentException;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -22,6 +23,8 @@ import java.util.concurrent.Callable;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.flow.Flow;
+import ru.netology.nmedia.dto.Attachment;
+import ru.netology.nmedia.dto.TypeAttachment;
 import ru.netology.nmedia.entity.PostEntity;
 
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -43,7 +46,7 @@ public final class PostDao_Impl implements PostDao {
     this.__insertionAdapterOfPostEntity = new EntityInsertionAdapter<PostEntity>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `PostEntity` (`id`,`author`,`authorAvatar`,`published`,`content`,`likedByMe`,`likes`,`hidden`) VALUES (nullif(?, 0),?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `PostEntity` (`id`,`author`,`authorAvatar`,`published`,`content`,`likedByMe`,`likes`,`hidden`,`url`,`type`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -74,6 +77,22 @@ public final class PostDao_Impl implements PostDao {
         stmt.bindLong(7, value.getLikes());
         final int _tmp_1 = value.getHidden() ? 1 : 0;
         stmt.bindLong(8, _tmp_1);
+        final Attachment _tmpAttachment = value.getAttachment();
+        if (_tmpAttachment != null) {
+          if (_tmpAttachment.getUrl() == null) {
+            stmt.bindNull(9);
+          } else {
+            stmt.bindString(9, _tmpAttachment.getUrl());
+          }
+          if (_tmpAttachment.getType() == null) {
+            stmt.bindNull(10);
+          } else {
+            stmt.bindString(10, __TypeAttachment_enumToString(_tmpAttachment.getType()));
+          }
+        } else {
+          stmt.bindNull(9);
+          stmt.bindNull(10);
+        }
       }
     };
     this.__preparedStmtOfHiddenPosts = new SharedSQLiteStatement(__db) {
@@ -251,6 +270,8 @@ public final class PostDao_Impl implements PostDao {
           final int _cursorIndexOfLikedByMe = CursorUtil.getColumnIndexOrThrow(_cursor, "likedByMe");
           final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
           final int _cursorIndexOfHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "hidden");
+          final int _cursorIndexOfUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "url");
+          final int _cursorIndexOfType = CursorUtil.getColumnIndexOrThrow(_cursor, "type");
           final List<PostEntity> _result = new ArrayList<PostEntity>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final PostEntity _item;
@@ -290,7 +311,21 @@ public final class PostDao_Impl implements PostDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfHidden);
             _tmpHidden = _tmp_1 != 0;
-            _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes,_tmpHidden);
+            final Attachment _tmpAttachment;
+            if (!(_cursor.isNull(_cursorIndexOfUrl) && _cursor.isNull(_cursorIndexOfType))) {
+              final String _tmpUrl;
+              if (_cursor.isNull(_cursorIndexOfUrl)) {
+                _tmpUrl = null;
+              } else {
+                _tmpUrl = _cursor.getString(_cursorIndexOfUrl);
+              }
+              final TypeAttachment _tmpType;
+              _tmpType = __TypeAttachment_stringToEnum(_cursor.getString(_cursorIndexOfType));
+              _tmpAttachment = new Attachment(_tmpUrl,_tmpType);
+            } else {
+              _tmpAttachment = null;
+            }
+            _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes,_tmpHidden,_tmpAttachment);
             _result.add(_item);
           }
           return _result;
@@ -313,5 +348,23 @@ public final class PostDao_Impl implements PostDao {
 
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();
+  }
+
+  private String __TypeAttachment_enumToString(final TypeAttachment _value) {
+    if (_value == null) {
+      return null;
+    } switch (_value) {
+      case IMAGE: return "IMAGE";
+      default: throw new IllegalArgumentException("Can't convert enum to string, unknown enum value: " + _value);
+    }
+  }
+
+  private TypeAttachment __TypeAttachment_stringToEnum(final String _value) {
+    if (_value == null) {
+      return null;
+    } switch (_value) {
+      case "IMAGE": return TypeAttachment.IMAGE;
+      default: throw new IllegalArgumentException("Can't convert value to enum, unknown value: " + _value);
+    }
   }
 }

@@ -73,8 +73,11 @@
     <string name="common_open_on_phone">Открыть на телефоне</string>
     <string name="common_signin_button_text">Войти</string>
     <string name="common_signin_button_text_long">Войти через аккаунт Google</string>
+    <string name="description_image">Изображение</string>
     <string name="description_post_attachment">Вложение</string>
     <string name="description_post_save">Кнопка сохранить пост</string>
+    <string name="description_select_photo">Выбрать фото</string>
+    <string name="description_take_photo">Сделать фото</string>
     <string name="edit_message">Изменить</string>
     <string name="error_action_title">Ошибка</string>
     <string name="error_empty_content">Поле не может быть пустым</string>
@@ -142,6 +145,7 @@
     <string name="mtrl_timepicker_confirm">ОК</string>
     <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Перейти вверх"</string>
     <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Открыть панель навигации"</string>
+    <string name="new_post">Новые посты</string>
     <string name="nmedia">НМедиа!</string>
     <string name="no_text">Нет постов</string>
     <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
@@ -149,6 +153,7 @@
     <string name="password_toggle_content_description">Показать пароль</string>
     <string name="play_video">Играть видео</string>
     <string name="post_text">Текст поста</string>
+    <string name="remove">Удалить</string>
     <string name="retry">Повторить</string>
     <string name="save">Сохранить</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Поиск"</string>

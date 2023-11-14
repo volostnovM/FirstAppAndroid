@@ -1,6 +1,7 @@
 package ru.netology.nmedia.viewmodel
 
 import android.app.Application
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -18,6 +19,8 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.switchMap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
+import ru.netology.nmedia.model.PhotoModel
+import java.io.File
 
 
 private val empty = Post(
@@ -42,6 +45,9 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         .map { FeedModel(posts = it, empty = it.isEmpty()) }
         .catch { it.printStackTrace() }
         .asLiveData(Dispatchers.Default)
+
+    private val _photo = MutableLiveData<PhotoModel?>(null)
+    val photo: LiveData<PhotoModel?> get() = _photo
 
     val newerCount = data.switchMap {
         repository.getNewer(it.posts.firstOrNull()?.id ?: 0L)
@@ -69,6 +75,14 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun setPhoto(uri: Uri, file: File) {
+        _photo.value = PhotoModel(uri, file)
+    }
+
+    fun removePhoto() {
+        edited.value = edited.value?.copy(attachment = null)
+    }
+
     fun loadNewPosts() = viewModelScope.launch {
         try {
             _dataState.value = FeedModelState(loading = true)
@@ -93,13 +107,20 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         edited.value?.let {
             val text = content.trim()
             if (it.content != content) {
-                _postCreated.value = Unit
+
                 viewModelScope.launch {
                     try {
                         it.copy(content = text)
-                        println("search ${it.toString()}")
-                        repository.save(it)
+
+                        val photoModel = _photo.value
+                        if (photoModel == null) {
+                            repository.save(it)
+                        } else {
+                            repository.saveWithAttachment(it, photoModel)
+                        }
+
                         _dataState.value = FeedModelState()
+                        _postCreated.value = Unit
                     } catch (e: Exception) {
                         _dataState.value = FeedModelState(error = true)
                     }
@@ -138,5 +159,9 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
         } catch (e: Exception) {
             _dataState.value = FeedModelState(error = true)
         }
+    }
+
+    fun clearPhoto() {
+        _photo.value = null
     }
 }

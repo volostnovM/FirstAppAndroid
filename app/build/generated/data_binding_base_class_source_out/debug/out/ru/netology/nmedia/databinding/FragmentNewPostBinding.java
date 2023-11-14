@@ -4,14 +4,16 @@ package ru.netology.nmedia.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,21 +24,38 @@ public final class FragmentNewPostBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final BottomAppBar bottomAppBar;
+  public final LinearLayout bottomAppBar;
 
   @NonNull
   public final EditText edit;
 
   @NonNull
-  public final FloatingActionButton ok;
+  public final FrameLayout imageContainer;
+
+  @NonNull
+  public final ImageView pickPhoto;
+
+  @NonNull
+  public final ImageView preview;
+
+  @NonNull
+  public final Button remove;
+
+  @NonNull
+  public final ImageView takePhoto;
 
   private FragmentNewPostBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull BottomAppBar bottomAppBar, @NonNull EditText edit,
-      @NonNull FloatingActionButton ok) {
+      @NonNull LinearLayout bottomAppBar, @NonNull EditText edit,
+      @NonNull FrameLayout imageContainer, @NonNull ImageView pickPhoto, @NonNull ImageView preview,
+      @NonNull Button remove, @NonNull ImageView takePhoto) {
     this.rootView = rootView;
     this.bottomAppBar = bottomAppBar;
     this.edit = edit;
-    this.ok = ok;
+    this.imageContainer = imageContainer;
+    this.pickPhoto = pickPhoto;
+    this.preview = preview;
+    this.remove = remove;
+    this.takePhoto = takePhoto;
   }
 
   @Override
@@ -67,7 +86,7 @@ public final class FragmentNewPostBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.bottomAppBar;
-      BottomAppBar bottomAppBar = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout bottomAppBar = ViewBindings.findChildViewById(rootView, id);
       if (bottomAppBar == null) {
         break missingId;
       }
@@ -78,13 +97,38 @@ public final class FragmentNewPostBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ok;
-      FloatingActionButton ok = ViewBindings.findChildViewById(rootView, id);
-      if (ok == null) {
+      id = R.id.imageContainer;
+      FrameLayout imageContainer = ViewBindings.findChildViewById(rootView, id);
+      if (imageContainer == null) {
         break missingId;
       }
 
-      return new FragmentNewPostBinding((CoordinatorLayout) rootView, bottomAppBar, edit, ok);
+      id = R.id.pickPhoto;
+      ImageView pickPhoto = ViewBindings.findChildViewById(rootView, id);
+      if (pickPhoto == null) {
+        break missingId;
+      }
+
+      id = R.id.preview;
+      ImageView preview = ViewBindings.findChildViewById(rootView, id);
+      if (preview == null) {
+        break missingId;
+      }
+
+      id = R.id.remove;
+      Button remove = ViewBindings.findChildViewById(rootView, id);
+      if (remove == null) {
+        break missingId;
+      }
+
+      id = R.id.takePhoto;
+      ImageView takePhoto = ViewBindings.findChildViewById(rootView, id);
+      if (takePhoto == null) {
+        break missingId;
+      }
+
+      return new FragmentNewPostBinding((CoordinatorLayout) rootView, bottomAppBar, edit,
+          imageContainer, pickPhoto, preview, remove, takePhoto);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

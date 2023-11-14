@@ -1,34 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.NewPostFragment">
 
-    <EditText
-        android:id="@+id/edit"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:background="@android:color/transparent"
-        />
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.bottomappbar.BottomAppBar
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="?actionBarSize">
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/common_padding"
+                tools:text="@tools:sample/lorem[100]" />
+
+            <FrameLayout
+                android:id="@+id/imageContainer"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/common_padding"
+                    tools:src="@tools:sample/avatars[8]"
+                    android:contentDescription="@string/description_image" />
+
+                <Button
+                    android:id="@+id/remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:text="@string/remove" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
         android:id="@+id/bottomAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="bottom"
+        android:background="?colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/description_post_save"
-        app:srcCompat="@drawable/ic_ok_24"
-        app:layout_anchor="@id/bottomAppBar"
-        />
+        <ImageView
+            android:id="@+id/takePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:padding="@dimen/common_padding"
+            app:srcCompat="@drawable/baseline_add_a_photo_24"
+            app:tint="?colorSurface"
+            android:contentDescription= "@string/description_take_photo" />
+
+        <ImageView
+            android:id="@+id/pickPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:padding="@dimen/common_padding"
+            app:srcCompat="@drawable/baseline_add_photo_alternate_24"
+            app:tint="?colorSurface"
+            android:contentDescription="@string/description_select_photo" />
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

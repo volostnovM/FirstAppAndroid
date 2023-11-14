@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-58:/values-nl/values-nl.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-60:/values-nl/values-nl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\1958a76d846651d10b28186adce18099\\transformed\\play-services-base-18.2.0\\res\\values-nl\\values.xml",
@@ -35,6 +35,23 @@
                         "startOffsets": "5533",
                         "endColumns": "142",
                         "endOffsets": "5671"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\ae13f7b4eb12b9f990ea8fdf1a31beaa\\transformed\\ucrop-2.2.6\\res\\values-nl\\values-nl.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,120,179",
+                        "endColumns": "64,58,54",
+                        "endOffsets": "115,174,229"
+                    },
+                    "to": {
+                        "startLines": "124,125,126",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "11446,11511,11570",
+                        "endColumns": "64,58,54",
+                        "endOffsets": "11506,11565,11620"
                     }
                 },
                 {

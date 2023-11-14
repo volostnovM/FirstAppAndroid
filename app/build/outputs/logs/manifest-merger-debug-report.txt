@@ -1,6 +1,8 @@
 -- Merging decision tree log ---
 application
 INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\main\AndroidManifest.xml:8:5-43:19
+MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:21:5-40:19
+MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:21:5-40:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Maxim\.gradle\caches\transforms-3\23a76923d14958b8b0e31c6d737038e8\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Maxim\.gradle\caches\transforms-3\23a76923d14958b8b0e31c6d737038e8\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Maxim\.gradle\caches\transforms-3\d5d0d169fb822a3b75fa0d401ff7feff\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -76,6 +78,8 @@ INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\
 INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\main\AndroidManifest.xml:2:1-44:12
 INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\Maxim\.gradle\caches\transforms-3\a9f94c336c23d1f34d610e017268b2cb\transformed\viewbinding-8.0.2\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:2:1-42:12
+MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\Maxim\.gradle\caches\transforms-3\ae13f7b4eb12b9f990ea8fdf1a31beaa\transformed\ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\63143c44a9a7c710b000f2b9a98c8923\transformed\room-ktx-2.5.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\Maxim\.gradle\caches\transforms-3\9723f613c132dda0a02ff7d12ffdfe77\transformed\navigation-common-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.6.0] C:\Users\Maxim\.gradle\caches\transforms-3\8ac41f7c5c5290535f4a46164a89683e\transformed\navigation-common-ktx-2.6.0\AndroidManifest.xml:17:1-22:12
@@ -154,11 +158,11 @@ MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Maxim\.gradle\
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Maxim\.gradle\caches\transforms-3\d2255a416d91adb3e2371f91be96b59a\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Maxim\.gradle\caches\transforms-3\d9b66890b0001dc7a996e7740b2b4ad0\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\bba7cc4af112837e588257daaebe40b8\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\Maxim\.gradle\caches\transforms-3\96487f41ef0ab7358bde4576836388cc\transformed\documentfile-1.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\Maxim\.gradle\caches\transforms-3\07ba9cfa5fc939df2e59520c9474549a\transformed\firebase-components-17.1.0\AndroidManifest.xml:15:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Maxim\.gradle\caches\transforms-3\510527a803611a31ea6174cc1e5ce393\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Maxim\.gradle\caches\transforms-3\85f24af0873e3ebe11f756c31ea896e7\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\4ae78be425904da9bd7fbee005af8363\transformed\transport-api-3.0.0\AndroidManifest.xml:15:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\91cb7939a8ccbaa09550da5aef0319cc\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\13463ba9d5e0f7aac6e67bf77f273985\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\b6d80a378ffaf8e1d61d0de1a89b6b66\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Maxim\.gradle\caches\transforms-3\46afe2fc975ea08d11f07b73a798c466\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
@@ -203,6 +207,10 @@ INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\
 INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\Maxim\.gradle\caches\transforms-3\a9f94c336c23d1f34d610e017268b2cb\transformed\viewbinding-8.0.2\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\Maxim\.gradle\caches\transforms-3\a9f94c336c23d1f34d610e017268b2cb\transformed\viewbinding-8.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\Maxim\.gradle\caches\transforms-3\ae13f7b4eb12b9f990ea8fdf1a31beaa\transformed\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\Maxim\.gradle\caches\transforms-3\ae13f7b4eb12b9f990ea8fdf1a31beaa\transformed\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\63143c44a9a7c710b000f2b9a98c8923\transformed\room-ktx-2.5.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\63143c44a9a7c710b000f2b9a98c8923\transformed\room-ktx-2.5.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\Maxim\.gradle\caches\transforms-3\9723f613c132dda0a02ff7d12ffdfe77\transformed\navigation-common-2.6.0\AndroidManifest.xml:20:5-44
@@ -359,6 +367,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Maxim\.gradle\cach
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Maxim\.gradle\caches\transforms-3\d9b66890b0001dc7a996e7740b2b4ad0\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\bba7cc4af112837e588257daaebe40b8\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\bba7cc4af112837e588257daaebe40b8\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\Maxim\.gradle\caches\transforms-3\96487f41ef0ab7358bde4576836388cc\transformed\documentfile-1.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] C:\Users\Maxim\.gradle\caches\transforms-3\96487f41ef0ab7358bde4576836388cc\transformed\documentfile-1.0.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\Maxim\.gradle\caches\transforms-3\07ba9cfa5fc939df2e59520c9474549a\transformed\firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\Maxim\.gradle\caches\transforms-3\07ba9cfa5fc939df2e59520c9474549a\transformed\firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Maxim\.gradle\caches\transforms-3\510527a803611a31ea6174cc1e5ce393\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -367,8 +377,6 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Maxim\.gradle\cache
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Maxim\.gradle\caches\transforms-3\85f24af0873e3ebe11f756c31ea896e7\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\4ae78be425904da9bd7fbee005af8363\transformed\transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\4ae78be425904da9bd7fbee005af8363\transformed\transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\91cb7939a8ccbaa09550da5aef0319cc\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\91cb7939a8ccbaa09550da5aef0319cc\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\13463ba9d5e0f7aac6e67bf77f273985\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\13463ba9d5e0f7aac6e67bf77f273985\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\Maxim\.gradle\caches\transforms-3\b6d80a378ffaf8e1d61d0de1a89b6b66\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
@@ -427,6 +435,52 @@ action#com.google.firebase.MESSAGING_EVENT
 ADDED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\main\AndroidManifest.xml:40:17-78
 	android:name
 		ADDED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\main\AndroidManifest.xml:40:25-75
+queries
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:9:5-19:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:12:9-14:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:13:13-73
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:13:21-70
+intent#action:name:android.intent.action.OPEN_DOCUMENT_TREE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:16:9-18:18
+action#android.intent.action.OPEN_DOCUMENT_TREE
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:17:13-79
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:17:21-76
+activity#com.github.dhaval2404.imagepicker.ImagePickerActivity
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:22:9-25:68
+	android:screenOrientation
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:24:13-52
+	android:theme
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:23:13-81
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:26:9-29:72
+	android:screenOrientation
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:28:13-49
+	android:theme
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:27:13-60
+provider#com.github.dhaval2404.imagepicker.ImagePickerFileProvider
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:31:9-39:20
+	android:grantUriPermissions
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:35:13-47
+	android:authorities
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:33:13-72
+	android:exported
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:32:13-85
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:36:13-38:71
+	android:resource
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:38:17-68
+	android:name
+		ADDED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\8b568335127850c55156385c8f47c390\transformed\imagepicker-2.1\AndroidManifest.xml:37:17-67
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-messaging-ktx:23.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\5f8aa8bead8698989b035afbd6193f60\transformed\firebase-messaging-ktx-23.2.1\AndroidManifest.xml:23:9-29:19
 MERGED from [com.google.firebase:firebase-messaging:23.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\93dcfe736b507ecbac454c318c5e9d13\transformed\firebase-messaging-23.2.1\AndroidManifest.xml:50:9-56:19

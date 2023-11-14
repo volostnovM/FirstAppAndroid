@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.request.RequestOptions
+import ru.netology.nmedia.BuildConfig
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
@@ -20,7 +21,7 @@ interface OnInteractionListener {
     fun edit(post: Post)
     fun video(post: Post)
     fun viewPost(post: Post)
-
+    fun onImage(image: String) {}
 }
 
 class PostsAdapter(
@@ -48,16 +49,22 @@ class PostViewHolder(
             content.text = post.content
 
             val options = RequestOptions().circleCrop()
-            val url = "http://10.0.2.2:9999/avatars/${post.authorAvatar}"
+            val url = "${BuildConfig.BASE_URL}${post.authorAvatar}"
             avatar.load(url, options)
 
             attachment.visibility = View.GONE
-            val urlAttachment = "http://10.0.2.2:9999/images/${post.attachment?.url}"
+            val urlAttachment = "${BuildConfig.BASE_URL}${post.attachment?.url}"
             if (post.attachment != null) {
                 attachment.visibility = View.VISIBLE
                 attachment.load(urlAttachment)
             } else {
                 attachment.visibility = View.GONE
+            }
+
+            attachment.setOnClickListener {
+                post.attachment?.let { attachment ->
+                    onInteractionListener.onImage(attachment.url)
+                }
             }
 
             likeButton.isChecked = post.likedByMe

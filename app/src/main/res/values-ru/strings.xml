@@ -32,4 +32,8 @@
     <string name="description_post_attachment">Вложение</string>
     <string name="error_send_message">Произошла ошибка запроса</string>
     <string name="new_post">Новые посты</string>
+    <string name="remove">Удалить</string>
+    <string name="description_image">Изображение</string>
+    <string name="description_take_photo">Сделать фото</string>
+    <string name="description_select_photo">Выбрать фото</string>
 </resources>

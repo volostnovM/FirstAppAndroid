@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-58:/values-it/values-it.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-60:/values-it/values-it.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\ae13f7b4eb12b9f990ea8fdf1a31beaa\\transformed\\ucrop-2.2.6\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,120,179",
+                        "endColumns": "64,58,50",
+                        "endOffsets": "115,174,225"
+                    },
+                    "to": {
+                        "startLines": "124,125,126",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "11434,11499,11558",
+                        "endColumns": "64,58,50",
+                        "endOffsets": "11494,11553,11604"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\d2b449642b4f4e20b55c0d4dfa32b0cf\\transformed\\appcompat-1.6.1\\res\\values-it\\values-it.xml",
                     "from": {

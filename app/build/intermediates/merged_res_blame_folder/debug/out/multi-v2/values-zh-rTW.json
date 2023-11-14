@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-58:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-60:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\468f43ea309c14dcb741801c13b6b8f2\\transformed\\navigation-ui-2.6.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
@@ -88,6 +88,23 @@
                         "startOffsets": "5002",
                         "endColumns": "102",
                         "endOffsets": "5100"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\ae13f7b4eb12b9f990ea8fdf1a31beaa\\transformed\\ucrop-2.2.6\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,132,186,240,287",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "127,181,235,282,399"
+                    },
+                    "to": {
+                        "startLines": "124,125,126,127,128",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "10011,10088,10142,10196,10243",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "10083,10137,10191,10238,10355"
                     }
                 },
                 {

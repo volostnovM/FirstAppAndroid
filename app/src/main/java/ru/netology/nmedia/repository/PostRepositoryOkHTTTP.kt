@@ -6,15 +6,23 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Response
 import ru.netology.nmedia.api.PostsApi
 import ru.netology.nmedia.dao.PostDao
+import ru.netology.nmedia.dto.Attachment
+import ru.netology.nmedia.dto.Media
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.dto.TypeAttachment
 import ru.netology.nmedia.entity.PostEntity
 import ru.netology.nmedia.entity.toDto
 import ru.netology.nmedia.entity.toEntity
 import ru.netology.nmedia.error.ApiException
 import ru.netology.nmedia.error.NetworkException
 import ru.netology.nmedia.error.UnknownException
+import ru.netology.nmedia.model.PhotoModel
+import java.io.File
 import java.io.IOException
 
 class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
@@ -144,5 +152,32 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
         } catch (e: Exception) {
             throw UnknownException
         }
+    }
+
+    override suspend fun saveWithAttachment(post: Post, photoModel: PhotoModel) {
+        try {
+            val mediaResponse = saveMedia(photoModel.file)
+            if (!mediaResponse.isSuccessful) {
+                throw ApiException(mediaResponse.code(), mediaResponse.message())
+            }
+
+            val media = mediaResponse.body() ?: throw ApiException(mediaResponse.code(), mediaResponse.message())
+
+            val response = PostsApi.retrofitService.saveAsync(post.copy(attachment = Attachment(media.id, TypeAttachment.IMAGE)))
+            if (!response.isSuccessful) {
+                throw ApiException(response.code(), response.message())
+            }
+            val body = response.body() ?: throw ApiException(response.code(), response.message())
+            dao.insert(PostEntity.fromDto(body))
+        } catch (e: IOException) {
+            throw NetworkException
+        } catch (e: Exception) {
+            throw UnknownException
+        }
+    }
+
+    private suspend fun saveMedia(file: File): Response<Media> {
+        val part = MultipartBody.Part.createFormData("file", file.name, file.asRequestBody())
+        return PostsApi.retrofitService.saveMedia(part)
     }
 }

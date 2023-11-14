@@ -11,6 +11,7 @@
     <color name="white">#FFFFFFFF</color>
     <dimen name="avatar_size">48dp</dimen>
     <dimen name="common_padding">16dp</dimen>
+    <dimen name="common_spacing">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="icon_padding">8dp</dimen>
     <dimen name="size_icon">24dp</dimen>
@@ -22,8 +23,11 @@
     <string name="channel_remote_name">channel remote name</string>
     <string name="chooser_share_post">choose share post</string>
     <string name="default_web_client_id" translatable="false">610441040419-365fugnemmc2l183ekkj0njf19p89df0.apps.googleusercontent.com</string>
+    <string name="description_image">description image</string>
     <string name="description_post_attachment">attachment</string>
     <string name="description_post_save">description_post_save</string>
+    <string name="description_select_photo">description select photo</string>
+    <string name="description_take_photo">description take photo</string>
     <string name="edit_message">Edit message</string>
     <string name="error_action_title">Error</string>
     <string name="error_empty_content">Error empty content</string>
@@ -41,6 +45,7 @@
     <string name="menu">menu</string>
     <string name="menu_edit">edit</string>
     <string name="menu_remove">remove</string>
+    <string name="new_post">new posts</string>
     <string name="nmedia">NMedia!</string>
     <string name="no_text">No text</string>
     <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
@@ -48,11 +53,12 @@
     <string name="play_video">play video</string>
     <string name="post_text">Post text</string>
     <string name="project_id" translatable="false">nmedia-56e4e</string>
+    <string name="remove">remove</string>
     <string name="retry">retry</string>
     <string name="save">save</string>
     <string name="text_netology">Netology</string>
     <string name="video">video</string>
-    <style name="Base.Theme.FirstProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.Theme.FirstProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         
         

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -38,6 +39,9 @@ public final class FragmentFeedBinding implements ViewBinding {
   public final FloatingActionButton fab;
 
   @NonNull
+  public final MaterialButton newPosts;
+
+  @NonNull
   public final ProgressBar progress;
 
   @NonNull
@@ -51,13 +55,15 @@ public final class FragmentFeedBinding implements ViewBinding {
 
   private FragmentFeedBinding(@NonNull ConstraintLayout rootView, @NonNull TextView emptyTextView,
       @NonNull Group errorGroup, @NonNull TextView errorTextView, @NonNull FloatingActionButton fab,
-      @NonNull ProgressBar progress, @NonNull RecyclerView recyclerList,
-      @NonNull Button retryButton, @NonNull SwipeRefreshLayout swipeRefresh) {
+      @NonNull MaterialButton newPosts, @NonNull ProgressBar progress,
+      @NonNull RecyclerView recyclerList, @NonNull Button retryButton,
+      @NonNull SwipeRefreshLayout swipeRefresh) {
     this.rootView = rootView;
     this.emptyTextView = emptyTextView;
     this.errorGroup = errorGroup;
     this.errorTextView = errorTextView;
     this.fab = fab;
+    this.newPosts = newPosts;
     this.progress = progress;
     this.recyclerList = recyclerList;
     this.retryButton = retryButton;
@@ -115,6 +121,12 @@ public final class FragmentFeedBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.newPosts;
+      MaterialButton newPosts = ViewBindings.findChildViewById(rootView, id);
+      if (newPosts == null) {
+        break missingId;
+      }
+
       id = R.id.progress;
       ProgressBar progress = ViewBindings.findChildViewById(rootView, id);
       if (progress == null) {
@@ -140,7 +152,7 @@ public final class FragmentFeedBinding implements ViewBinding {
       }
 
       return new FragmentFeedBinding((ConstraintLayout) rootView, emptyTextView, errorGroup,
-          errorTextView, fab, progress, recyclerList, retryButton, swipeRefresh);
+          errorTextView, fab, newPosts, progress, recyclerList, retryButton, swipeRefresh);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
