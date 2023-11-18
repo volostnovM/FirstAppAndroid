@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="add_post">Добавить пост</string>
     <string name="app_name">Первый проект</string>
+    <string name="avatar">аватар</string>
+    <string name="cancel">Отмена</string>
+    <string name="channel_remote_description">Уведомление с удаленного сервера</string>
+    <string name="channel_remote_name">Уведомление с сервера</string>
+    <string name="chooser_share_post">"Выберете пост для отправки "</string>
+    <string name="description_image">Изображение</string>
+    <string name="description_post_attachment">Вложение</string>
+    <string name="description_post_save">Кнопка сохранить пост</string>
+    <string name="description_select_photo">Выбрать фото</string>
+    <string name="description_take_photo">Сделать фото</string>
+    <string name="edit_message">Изменить</string>
+    <string name="error_action_title">Ошибка</string>
+    <string name="error_empty_content">Поле не может быть пустым</string>
+    <string name="error_send_message">Произошла ошибка запроса</string>
+    <string name="icon_edit">Иконка изменить</string>
+    <string name="icon_like">Иконка нравится</string>
+    <string name="icon_share">Иконка поделиться</string>
+    <string name="icon_view">"Иконка просмотров "</string>
+    <string name="internet_error">Проблемы с соединением с сервером</string>
+    <string name="menu">меню</string>
+    <string name="menu_edit">Изменить</string>
+    <string name="menu_remove">Удалить</string>
+    <string name="new_post">Новые посты</string>
     <string name="nmedia">НМедиа!</string>
+    <string name="no_text">Нет постов</string>
+    <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
+    <string name="notification_user_new_posted">%1$s опубликовал новый пост</string>
+    <string name="play_video">Играть видео</string>
+    <string name="post_text">Текст поста</string>
+    <string name="remove">Удалить</string>
+    <string name="retry">Повторить</string>
+    <string name="save">Сохранить</string>
+    <string name="text_netology">Нетология</string>
+    <string name="video">Видео</string>
 </resources>

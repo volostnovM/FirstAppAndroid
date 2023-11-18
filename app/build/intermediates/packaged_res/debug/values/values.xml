@@ -1,13 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:ns1="http://schemas.android.com/tools">
     <color name="black">#FF000000</color>
+    <color name="blue">#FF0066FF</color>
     <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <dimen name="avatar_size">48dp</dimen>
+    <dimen name="common_padding">16dp</dimen>
+    <dimen name="common_spacing">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="icon_padding">8dp</dimen>
+    <dimen name="size_icon">24dp</dimen>
+    <string name="add_post">add post</string>
     <string name="app_name">FirstProject</string>
+    <string name="avatar">avatar</string>
+    <string name="cancel">cancel</string>
+    <string name="channel_remote_description">Notification from remote server</string>
+    <string name="channel_remote_name">channel remote name</string>
+    <string name="chooser_share_post">choose share post</string>
+    <string name="default_web_client_id" translatable="false">610441040419-365fugnemmc2l183ekkj0njf19p89df0.apps.googleusercontent.com</string>
+    <string name="description_image">description image</string>
+    <string name="description_post_attachment">attachment</string>
+    <string name="description_post_save">description_post_save</string>
+    <string name="description_select_photo">description select photo</string>
+    <string name="description_take_photo">description take photo</string>
+    <string name="edit_message">Edit message</string>
+    <string name="error_action_title">Error</string>
+    <string name="error_empty_content">Error empty content</string>
+    <string name="error_send_message">Error send</string>
+    <string name="gcm_defaultSenderId" translatable="false">610441040419</string>
+    <string name="google_api_key" translatable="false">AIzaSyA3ATpDCQcrLyECv1v6q6lmDW8FzyrJpZM</string>
+    <string name="google_app_id" translatable="false">1:610441040419:android:4f1648ebb05016a6531796</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA3ATpDCQcrLyECv1v6q6lmDW8FzyrJpZM</string>
+    <string name="google_storage_bucket" translatable="false">nmedia-56e4e.appspot.com</string>
+    <string name="icon_edit">icon_edit</string>
+    <string name="icon_like">icon like</string>
+    <string name="icon_share">icon share</string>
+    <string name="icon_view">icon view</string>
+    <string name="internet_error">Internet error</string>
+    <string name="menu">menu</string>
+    <string name="menu_edit">edit</string>
+    <string name="menu_remove">remove</string>
+    <string name="new_post">new posts</string>
     <string name="nmedia">NMedia!</string>
-    <style name="Base.Theme.FirstProject" parent="Theme.Material3.DayNight.NoActionBar">
+    <string name="no_text">No text</string>
+    <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
+    <string name="notification_user_new_posted">%1$s posted a new post</string>
+    <string name="play_video">play video</string>
+    <string name="post_text">Post text</string>
+    <string name="project_id" translatable="false">nmedia-56e4e</string>
+    <string name="remove">remove</string>
+    <string name="retry">retry</string>
+    <string name="save">save</string>
+    <string name="text_netology">Netology</string>
+    <string name="video">video</string>
+    <style name="Base.Theme.FirstProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
+        
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
         
     </style>
     <style name="Theme.FirstProject" parent="Base.Theme.FirstProject"/>
+    <style name="Widget.AppTheme.LikeButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/like_selector</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textColor">?attr/colorControlNormal</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+    <style name="Widget.AppTheme.MenuButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">?attr/colorControlNormal</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+    <style name="Widget.AppTheme.ShareButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">?attr/colorControlNormal</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textColor">?attr/colorControlNormal</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
 </resources>
