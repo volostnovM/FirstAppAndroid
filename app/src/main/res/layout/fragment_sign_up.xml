@@ -142,11 +142,11 @@
         android:backgroundTint="@color/blue"
         android:elevation="15dp"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
 
         <Button
             android:id="@+id/retry_button"
@@ -170,13 +170,5 @@
             android:textColor="?attr/colorAccent"
             android:textSize="18sp"
             app:layout_constraintVertical_chainStyle="packed" />
-
-        <ProgressBar
-            android:id="@+id/reg_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp" />
-
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

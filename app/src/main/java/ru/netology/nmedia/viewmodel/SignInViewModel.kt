@@ -35,9 +35,9 @@ class SignInViewModel(application: Application) : AndroidViewModel(application) 
             try {
                 _dataState.value = FeedModelState(loading = true)
                 repository.signIn(login, pass)
-                _dataState.value = FeedModelState(loading = false, authState = true)
+                _dataState.value = FeedModelState(loading = false, error = false, authState = true)
             } catch (e: Exception) {
-                _dataState.value = FeedModelState(loading = false, error = true)
+                _dataState.value = FeedModelState(loading = false, error = true, authState = false)
             }
         }
     }

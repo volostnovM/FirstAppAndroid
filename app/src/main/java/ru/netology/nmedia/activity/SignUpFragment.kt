@@ -56,8 +56,7 @@ class SignUpFragment : Fragment() {
         with(binding) {
 
             regButton.setOnClickListener {
-                if (usernameRegInput.text?.trim().toString().isBlank() || loginRegInput.text?.trim()
-                        .toString().isBlank()
+                if (usernameRegInput.text?.trim().toString().isBlank() || loginRegInput.text?.trim().toString().isBlank()
                     || passwordRegInput.text?.trim().toString().isBlank()
                 ) {
                     Toast.makeText(
@@ -76,7 +75,6 @@ class SignUpFragment : Fragment() {
             cancelButton.setOnClickListener {
                 findNavController().navigate(R.id.feedFragment)
             }
-
         }
 
         return binding.root

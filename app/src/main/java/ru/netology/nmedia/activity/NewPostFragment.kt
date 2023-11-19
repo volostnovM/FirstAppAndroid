@@ -31,6 +31,7 @@ class NewPostFragment : Fragment() {
         var Bundle.text by StringArg
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -126,5 +127,10 @@ class NewPostFragment : Fragment() {
         viewModel.cancelEditing()
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        println("onDestroyView")
     }
 }

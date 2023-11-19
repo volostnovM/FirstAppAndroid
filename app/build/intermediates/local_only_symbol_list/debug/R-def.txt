@@ -76,6 +76,7 @@ id nav_host_fragment
 id navig_main
 id newPostFragment
 id newPosts
+id owned
 id password
 id password_input
 id password_reg
@@ -89,7 +90,6 @@ id recyclerList
 id reg_button
 id reg_error
 id reg_form
-id reg_progress
 id reg_progress_loading
 id register_title
 id remove

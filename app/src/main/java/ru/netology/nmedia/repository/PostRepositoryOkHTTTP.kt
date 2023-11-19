@@ -201,7 +201,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun signUp(name: String, login: String, pass: String) {
         try {
-            val response = PostsApi.retrofitService.registerUser(name, login, pass)
+            val response = PostsApi.retrofitService.registerUser(login, pass, name)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }

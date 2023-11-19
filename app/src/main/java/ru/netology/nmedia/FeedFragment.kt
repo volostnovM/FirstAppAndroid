@@ -81,12 +81,12 @@ class FeedFragment : Fragment() {
             }
 
             override fun viewPost(post: Post) {
-                findNavController().navigate(
-                    R.id.action_feedFragment_to_postFragment,
-                    Bundle().apply {
-                        idArg = post.id
-                    }
-                )
+//                findNavController().navigate(
+//                    R.id.action_feedFragment_to_postFragment,
+//                    Bundle().apply {
+//                        idArg = post.id
+//                    }
+//                )
             }
 
             override fun onImage(image: String) {
@@ -171,7 +171,6 @@ class FeedFragment : Fragment() {
             else {
                 findNavController().navigate(R.id.signInFragment)
             }
-
         }
 
         return binding.root
