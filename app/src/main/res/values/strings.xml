@@ -35,5 +35,19 @@
     <string name="description_image">description image</string>
     <string name="description_take_photo">description take photo</string>
     <string name="description_select_photo">description select photo</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="write_name">write name</string>
+    <string name="registration">Registration</string>
+    <string name="write_login">write login</string>
+    <string name="write_password">write password</string>
+    <string name="write_login_password"><![CDATA[write login & password]]></string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="message_exit">Are you sure you want to go out?</string>
+    <string name="register_title">Регистрация</string>
+    <string name="sign_in_exception_message">Can\'t login. Most likely the username or password is incorrect</string>
+    <string name="sign_up_exception_message">Can\'t register</string>
 
 </resources>

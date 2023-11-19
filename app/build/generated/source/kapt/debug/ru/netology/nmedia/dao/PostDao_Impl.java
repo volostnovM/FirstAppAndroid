@@ -46,7 +46,7 @@ public final class PostDao_Impl implements PostDao {
     this.__insertionAdapterOfPostEntity = new EntityInsertionAdapter<PostEntity>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `PostEntity` (`id`,`author`,`authorAvatar`,`published`,`content`,`likedByMe`,`likes`,`hidden`,`url`,`type`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `PostEntity` (`id`,`author`,`authorAvatar`,`published`,`content`,`likedByMe`,`likes`,`hidden`,`authorId`,`url`,`type`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -77,21 +77,22 @@ public final class PostDao_Impl implements PostDao {
         stmt.bindLong(7, value.getLikes());
         final int _tmp_1 = value.getHidden() ? 1 : 0;
         stmt.bindLong(8, _tmp_1);
+        stmt.bindLong(9, value.getAuthorId());
         final Attachment _tmpAttachment = value.getAttachment();
         if (_tmpAttachment != null) {
           if (_tmpAttachment.getUrl() == null) {
-            stmt.bindNull(9);
-          } else {
-            stmt.bindString(9, _tmpAttachment.getUrl());
-          }
-          if (_tmpAttachment.getType() == null) {
             stmt.bindNull(10);
           } else {
-            stmt.bindString(10, __TypeAttachment_enumToString(_tmpAttachment.getType()));
+            stmt.bindString(10, _tmpAttachment.getUrl());
+          }
+          if (_tmpAttachment.getType() == null) {
+            stmt.bindNull(11);
+          } else {
+            stmt.bindString(11, __TypeAttachment_enumToString(_tmpAttachment.getType()));
           }
         } else {
-          stmt.bindNull(9);
           stmt.bindNull(10);
+          stmt.bindNull(11);
         }
       }
     };
@@ -131,7 +132,7 @@ public final class PostDao_Impl implements PostDao {
   }
 
   @Override
-  public Object insert(final PostEntity post, final Continuation<? super Unit> $completion) {
+  public Object insert(final PostEntity post, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -144,11 +145,11 @@ public final class PostDao_Impl implements PostDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object insert(final List<PostEntity> post, final Continuation<? super Unit> $completion) {
+  public Object insert(final List<PostEntity> post, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -161,11 +162,11 @@ public final class PostDao_Impl implements PostDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object hiddenPosts(final Continuation<? super Unit> $completion) {
+  public Object hiddenPosts(final Continuation<? super Unit> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -180,12 +181,12 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfHiddenPosts.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg0);
   }
 
   @Override
   public Object updateContentById(final long id, final String text,
-      final Continuation<? super Unit> $completion) {
+      final Continuation<? super Unit> arg2) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -208,11 +209,11 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfUpdateContentById.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg2);
   }
 
   @Override
-  public Object likeById(final long id, final Continuation<? super Unit> $completion) {
+  public Object likeById(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -229,11 +230,11 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfLikeById.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object removeById(final long id, final Continuation<? super Unit> $completion) {
+  public Object removeById(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -250,7 +251,7 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfRemoveById.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
@@ -270,6 +271,7 @@ public final class PostDao_Impl implements PostDao {
           final int _cursorIndexOfLikedByMe = CursorUtil.getColumnIndexOrThrow(_cursor, "likedByMe");
           final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(_cursor, "likes");
           final int _cursorIndexOfHidden = CursorUtil.getColumnIndexOrThrow(_cursor, "hidden");
+          final int _cursorIndexOfAuthorId = CursorUtil.getColumnIndexOrThrow(_cursor, "authorId");
           final int _cursorIndexOfUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "url");
           final int _cursorIndexOfType = CursorUtil.getColumnIndexOrThrow(_cursor, "type");
           final List<PostEntity> _result = new ArrayList<PostEntity>(_cursor.getCount());
@@ -311,6 +313,8 @@ public final class PostDao_Impl implements PostDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfHidden);
             _tmpHidden = _tmp_1 != 0;
+            final long _tmpAuthorId;
+            _tmpAuthorId = _cursor.getLong(_cursorIndexOfAuthorId);
             final Attachment _tmpAttachment;
             if (!(_cursor.isNull(_cursorIndexOfUrl) && _cursor.isNull(_cursorIndexOfType))) {
               final String _tmpUrl;
@@ -325,7 +329,7 @@ public final class PostDao_Impl implements PostDao {
             } else {
               _tmpAttachment = null;
             }
-            _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes,_tmpHidden,_tmpAttachment);
+            _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes,_tmpHidden,_tmpAttachment,_tmpAuthorId);
             _result.add(_item);
           }
           return _result;
@@ -342,8 +346,8 @@ public final class PostDao_Impl implements PostDao {
   }
 
   @Override
-  public Object save(final PostEntity post, final Continuation<? super Unit> $completion) {
-    return PostDao.DefaultImpls.save(PostDao_Impl.this, post, $completion);
+  public Object save(final PostEntity post, final Continuation<? super Unit> arg1) {
+    return PostDao.DefaultImpls.save(PostDao_Impl.this, post, arg1);
   }
 
   public static List<Class<?>> getRequiredConverters() {

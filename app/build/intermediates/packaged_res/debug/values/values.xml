@@ -45,19 +45,33 @@
     <string name="menu">menu</string>
     <string name="menu_edit">edit</string>
     <string name="menu_remove">remove</string>
+    <string name="message_exit">Are you sure you want to go out?</string>
     <string name="new_post">new posts</string>
     <string name="nmedia">NMedia!</string>
     <string name="no_text">No text</string>
     <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
     <string name="notification_user_new_posted">%1$s posted a new post</string>
+    <string name="password">Password</string>
     <string name="play_video">play video</string>
     <string name="post_text">Post text</string>
     <string name="project_id" translatable="false">nmedia-56e4e</string>
+    <string name="register_title">Регистрация</string>
+    <string name="registration">Registration</string>
     <string name="remove">remove</string>
     <string name="retry">retry</string>
     <string name="save">save</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_exception_message">Can\'t login. Most likely the username or password is incorrect</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_exception_message">Can\'t register</string>
     <string name="text_netology">Netology</string>
+    <string name="user_name">User name</string>
     <string name="video">video</string>
+    <string name="write_login">write login</string>
+    <string name="write_login_password"><![CDATA[write login & password]]></string>
+    <string name="write_name">write name</string>
+    <string name="write_password">write password</string>
     <style name="Base.Theme.FirstProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         

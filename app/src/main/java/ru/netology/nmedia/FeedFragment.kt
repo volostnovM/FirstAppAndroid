@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
@@ -17,9 +19,12 @@ import ru.netology.nmedia.adapter.OnInteractionListener
 import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.databinding.FragmentFeedBinding
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.viewmodel.AuthViewModel
 import ru.netology.nmedia.viewmodel.PostViewModel
 
 class FeedFragment : Fragment() {
+
+    val viewModelAuth by viewModels<AuthViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,10 +37,15 @@ class FeedFragment : Fragment() {
 
         val adapter = PostsAdapter(object : OnInteractionListener {
             override fun like(post: Post) {
-                if (post.likedByMe) {
-                    viewModel.unlikeById(post.id)
-                } else {
-                    viewModel.likeById(post.id)
+                if(viewModelAuth.authenticated) {
+                    if (post.likedByMe) {
+                        viewModel.unlikeById(post.id)
+                    } else {
+                        viewModel.likeById(post.id)
+                    }
+                } else
+                {
+                    findNavController().navigate(R.id.signInFragment)
                 }
             }
 
@@ -155,7 +165,13 @@ class FeedFragment : Fragment() {
         }
 
         binding.fab.setOnClickListener {
-            findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)
+            if(viewModelAuth.authenticated) {
+                findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)
+            }
+            else {
+                findNavController().navigate(R.id.signInFragment)
+            }
+
         }
 
         return binding.root

@@ -10,6 +10,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Response
 import ru.netology.nmedia.api.PostsApi
+import ru.netology.nmedia.auth.AppAuth
 import ru.netology.nmedia.dao.PostDao
 import ru.netology.nmedia.dto.Attachment
 import ru.netology.nmedia.dto.Media
@@ -179,5 +180,38 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
     private suspend fun saveMedia(file: File): Response<Media> {
         val part = MultipartBody.Part.createFormData("file", file.name, file.asRequestBody())
         return PostsApi.retrofitService.saveMedia(part)
+    }
+
+    override suspend fun signIn(login: String, pass: String) {
+        try {
+            val response = PostsApi.retrofitService.updateUser(login, pass)
+            if (!response.isSuccessful) {
+                throw ApiException(response.code(), response.message())
+            }
+            val authState = response.body() ?: throw ApiException(response.code(), response.message())
+            authState.token?.let { AppAuth.getInstance().setAuth(authState.id, it) }
+
+        } catch (e: IOException) {
+            throw NetworkException
+        } catch (e: Exception) {
+            throw UnknownException
+        }
+        return
+    }
+
+    override suspend fun signUp(name: String, login: String, pass: String) {
+        try {
+            val response = PostsApi.retrofitService.registerUser(name, login, pass)
+            if (!response.isSuccessful) {
+                throw ApiException(response.code(), response.message())
+            }
+            val authState = response.body() ?: throw ApiException(response.code(), response.message())
+            authState.token?.let { AppAuth.getInstance().setAuth(authState.id, it) }
+
+        } catch (e: IOException) {
+            throw NetworkException
+        } catch (e: Exception) {
+            throw UnknownException
+        }
     }
 }

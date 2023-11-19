@@ -13,4 +13,6 @@ data class FeedModelState(
     val errorMessage: String = "",
     val errorLike: Boolean = false,
     val error: Boolean = false,
+    val serverError: Boolean = false,
+    val authState: Boolean = false
 )
