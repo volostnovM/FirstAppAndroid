@@ -20,6 +20,7 @@ import ru.netology.nmedia.auth.AppAuth
 import ru.netology.nmedia.auth.AuthState
 import ru.netology.nmedia.dto.Media
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.dto.PushToken
 
 private const val BASE_URL = "${BuildConfig.BASE_URL}/api/slow/"
 
@@ -52,6 +53,9 @@ interface PostsApiService {
     @FormUrlEncoded
     @POST("users/registration")
     suspend fun registerUser(@Field("login") login: String, @Field("pass") pass: String, @Field("name") name: String): Response<AuthState>
+
+    @POST("users/push-tokens")
+    suspend fun sendPushToken(@Body token: PushToken): Response<Unit>
 }
 
 val logger = HttpLoggingInterceptor().apply {

@@ -132,7 +132,7 @@ public final class PostDao_Impl implements PostDao {
   }
 
   @Override
-  public Object insert(final PostEntity post, final Continuation<? super Unit> arg1) {
+  public Object insert(final PostEntity post, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -145,11 +145,11 @@ public final class PostDao_Impl implements PostDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object insert(final List<PostEntity> post, final Continuation<? super Unit> arg1) {
+  public Object insert(final List<PostEntity> post, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -162,11 +162,11 @@ public final class PostDao_Impl implements PostDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object hiddenPosts(final Continuation<? super Unit> arg0) {
+  public Object hiddenPosts(final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -181,12 +181,12 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfHiddenPosts.release(_stmt);
         }
       }
-    }, arg0);
+    }, $completion);
   }
 
   @Override
   public Object updateContentById(final long id, final String text,
-      final Continuation<? super Unit> arg2) {
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -209,11 +209,11 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfUpdateContentById.release(_stmt);
         }
       }
-    }, arg2);
+    }, $completion);
   }
 
   @Override
-  public Object likeById(final long id, final Continuation<? super Unit> arg1) {
+  public Object likeById(final long id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -230,11 +230,11 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfLikeById.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
-  public Object removeById(final long id, final Continuation<? super Unit> arg1) {
+  public Object removeById(final long id, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -251,7 +251,7 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfRemoveById.release(_stmt);
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
@@ -346,8 +346,8 @@ public final class PostDao_Impl implements PostDao {
   }
 
   @Override
-  public Object save(final PostEntity post, final Continuation<? super Unit> arg1) {
-    return PostDao.DefaultImpls.save(PostDao_Impl.this, post, arg1);
+  public Object save(final PostEntity post, final Continuation<? super Unit> $completion) {
+    return PostDao.DefaultImpls.save(PostDao_Impl.this, post, $completion);
   }
 
   public static List<Class<?>> getRequiredConverters() {

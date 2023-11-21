@@ -1,13 +1,27 @@
 package ru.netology.nmedia.auth
 
 import android.content.Context
+import androidx.work.Constraints
+import androidx.work.Data
+import androidx.work.ExistingWorkPolicy
+import androidx.work.NetworkType
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import ru.netology.nmedia.api.PostsApi
 import ru.netology.nmedia.db.AppDb
+import ru.netology.nmedia.dto.PushToken
+import ru.netology.nmedia.workers.SendPushTokenWorker
 
-class AppAuth private constructor(context: Context) {
+class AppAuth private constructor(private val context: Context) {
 
     private val prefs = context.getSharedPreferences("auth", Context.MODE_PRIVATE)
 
@@ -27,6 +41,7 @@ class AppAuth private constructor(context: Context) {
             putString(KEY_TOKEN, token)
             commit()
         }
+        sendPushToken()
     }
 
     @Synchronized
@@ -36,6 +51,25 @@ class AppAuth private constructor(context: Context) {
             clear()
             commit()
         }
+        sendPushToken()
+    }
+
+    fun sendPushToken(token: String? = null) {
+        val request = OneTimeWorkRequestBuilder<SendPushTokenWorker>()
+            .setConstraints(
+                Constraints.Builder()
+                    .setRequiredNetworkType(NetworkType.CONNECTED)
+                    .build()
+            )
+            .setInputData(
+                Data.Builder()
+                    .putString(SendPushTokenWorker.NAME_WORKER, token)
+                    .build()
+            )
+            .build()
+
+        WorkManager.getInstance(context)
+            .enqueueUniqueWork(SendPushTokenWorker.NAME_WORKER, ExistingWorkPolicy.REPLACE, request)
     }
 
     companion object {

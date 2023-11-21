@@ -9,6 +9,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.util.Log
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -16,6 +18,7 @@ import com.google.firebase.messaging.RemoteMessage
 import com.google.gson.Gson
 import ru.netology.nmedia.R
 import ru.netology.nmedia.activity.AppActivity
+import ru.netology.nmedia.auth.AppAuth
 import kotlin.random.Random
 
 
@@ -40,31 +43,61 @@ class FCMService : FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(message: RemoteMessage) {
-        try {
-            message.data[action]?.let {
-                when (Action.valueOf(it)) {
-                    Action.LIKE -> handleLike(
-                        gson.fromJson(
-                            message.data[content],
-                            Like::class.java
-                        )
-                    )
+        Log.d("FCMService", message.data.toString())
+//        try {
+//            message.data[action]?.let {
+//                when (Action.valueOf(it)) {
+//                    Action.LIKE -> handleLike(
+//                        gson.fromJson(
+//                            message.data[content],
+//                            Like::class.java
+//                        )
+//                    )
+//
+//                    Action.POST -> handleNewPost(
+//                        gson.fromJson(
+//                            message.data[content],
+//                            NewPost::class.java
+//                        )
+//                    )
+//                }
+//            }
+//        } catch (error: IllegalArgumentException) {
+//            errorAction(gson.fromJson(message.data[content], ErrorAction::class.java))
+//        }
 
-                    Action.POST -> handleNewPost(
-                        gson.fromJson(
-                            message.data[content],
-                            NewPost::class.java
-                        )
-                    )
-                }
-            }
-        } catch (error: IllegalArgumentException) {
-            errorAction(gson.fromJson(message.data[content], ErrorAction::class.java))
+        val id = AppAuth.getInstance().authState.value.id
+        val recipientId = message.data["recipientId"]?.toLong()
+        when (recipientId) {
+            0L -> AppAuth.getInstance().sendPushToken()
+            id, null -> handleMessage(gson.fromJson(message.data[content], PushMessage::class.java))
+            else -> AppAuth.getInstance().sendPushToken()
         }
     }
 
+    private fun handleMessage(content: PushMessage) {
+        val intent = Intent(this, AppActivity::class.java)
+        val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+
+        val notification = NotificationCompat.Builder(this, channelId)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(
+                getString(
+                    R.string.notification_user,
+                    content.recipientId.toString(),
+                    content.content,
+                )
+            )
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pi)
+            .setAutoCancel(true)
+            .build()
+
+        notify(notification)
+    }
+
     override fun onNewToken(token: String) {
-        println(token)
+        AppAuth.getInstance().sendPushToken(token)
     }
 
     private fun handleLike(content: Like) {
@@ -164,4 +197,9 @@ data class NewPost(
 
 data class ErrorAction(
     val textErrorAction: String = "Update your app"
+)
+
+data class PushMessage(
+    val recipientId: Long?,
+    val content: String
 )

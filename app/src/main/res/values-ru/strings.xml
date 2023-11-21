@@ -50,4 +50,5 @@
     <string name="sign_in_exception_message">Не получается войти. Скорее всего не верный логин или пароль</string>
     <string name="sign_up_exception_message">Не получается зарегистрироваться</string>
     <string name="register_title">Регистрация</string>
+    <string name="notification_user">Пользователь %1$s получил привет %2$s</string>
 </resources>
