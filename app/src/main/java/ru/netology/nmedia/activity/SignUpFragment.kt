@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.FragmentSignUpBinding
@@ -18,7 +19,7 @@ import ru.netology.nmedia.viewmodel.SignUpViewModel
 class SignUpFragment : Fragment() {
 
 
-    private val signUpViewModel: SignUpViewModel by activityViewModels()
+    private val signUpViewModel: SignUpViewModel by viewModels()
     private var bindingSU: FragmentSignUpBinding? = null
 
     override fun onCreateView(

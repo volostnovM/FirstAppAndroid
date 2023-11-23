@@ -124,13 +124,11 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 
                 viewModelScope.launch {
                     try {
-                        it.copy(content = text)
-
                         val photoModel = _photo.value
                         if (photoModel == null) {
-                            repository.save(it)
+                            repository.save(it.copy(content = text))
                         } else {
-                            repository.saveWithAttachment(it, photoModel)
+                            repository.saveWithAttachment(it.copy(content = text), photoModel)
                         }
 
                         _dataState.value = FeedModelState()

@@ -49,6 +49,7 @@
     <string name="new_post">new posts</string>
     <string name="nmedia">NMedia!</string>
     <string name="no_text">No text</string>
+    <string name="notification_user">User %1$s get hello from %2$s</string>
     <string name="notification_user_liked">User %1$s liked %2$s\\\'s post</string>
     <string name="notification_user_new_posted">%1$s posted a new post</string>
     <string name="password">Password</string>

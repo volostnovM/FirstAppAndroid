@@ -28,6 +28,7 @@
     <string name="new_post">Новые посты</string>
     <string name="nmedia">НМедиа!</string>
     <string name="no_text">Нет постов</string>
+    <string name="notification_user">Пользователь %1$s получил привет %2$s</string>
     <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
     <string name="notification_user_new_posted">%1$s опубликовал новый пост</string>
     <string name="password">Пароль</string>

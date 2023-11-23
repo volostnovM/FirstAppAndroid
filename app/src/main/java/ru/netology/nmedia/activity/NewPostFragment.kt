@@ -88,7 +88,7 @@ class NewPostFragment : Fragment() {
 
                     else -> false
                 }
-        })
+        }, viewLifecycleOwner)
 
         viewModel.postCreated.observe(viewLifecycleOwner)
         {

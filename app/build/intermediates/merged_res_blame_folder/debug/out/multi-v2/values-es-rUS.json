@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-60:/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-63:/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\468f43ea309c14dcb741801c13b6b8f2\\transformed\\navigation-ui-2.6.0\\res\\values-es-rUS\\values-es-rUS.xml",
