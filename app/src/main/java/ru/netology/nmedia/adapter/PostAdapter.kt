@@ -50,11 +50,11 @@ class PostViewHolder(
             content.text = post.content
 
             val options = RequestOptions().circleCrop()
-            val url = "${BuildConfig.BASE_URL}${post.authorAvatar}"
+            val url = "${BuildConfig.BASE_URL}/avatars/${post.authorAvatar}"
             avatar.load(url, options)
 
             attachment.visibility = View.GONE
-            val urlAttachment = "${BuildConfig.BASE_URL}${post.attachment?.url}"
+            val urlAttachment = "${BuildConfig.BASE_URL}/media/${post.attachment?.url}"
             if (post.attachment != null) {
                 attachment.visibility = View.VISIBLE
                 attachment.load(urlAttachment)
