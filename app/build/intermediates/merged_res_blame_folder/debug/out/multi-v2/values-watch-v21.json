@@ -4,7 +4,7 @@
             "outputFile": "ru.netology.nmedia.app-mergeDebugResources-63:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\d2b449642b4f4e20b55c0d4dfa32b0cf\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\3636a66c95f44e7e2f7f4dfb5558db41\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

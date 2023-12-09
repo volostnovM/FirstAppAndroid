@@ -9,7 +9,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Response
-import ru.netology.nmedia.api.PostsApi
+import ru.netology.nmedia.api.PostsApiService
 import ru.netology.nmedia.auth.AppAuth
 import ru.netology.nmedia.dao.PostDao
 import ru.netology.nmedia.dto.Attachment
@@ -25,8 +25,13 @@ import ru.netology.nmedia.error.UnknownException
 import ru.netology.nmedia.model.PhotoModel
 import java.io.File
 import java.io.IOException
+import javax.inject.Inject
 
-class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
+class PostRepositoryOkHTTTP @Inject constructor (
+    private val dao: PostDao,
+    private val postApi: PostsApiService,
+    private val appAuth: AppAuth
+) : PostRepository {
 
     companion object {
         private const val BASE_URL = "http://10.0.2.2:9999"
@@ -39,7 +44,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun getAll() {
         try {
-            val response = PostsApi.retrofitService.getAll()
+            val response = postApi.getAll()
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
@@ -63,7 +68,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
             delay(10_000L)
 
             try {
-                val response = PostsApi.retrofitService.getNewer(id)
+                val response = postApi.getNewer(id)
                 if (!response.isSuccessful) {
                     throw ApiException(response.code(), response.message())
                 }
@@ -94,7 +99,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
     override suspend fun likeById(id: Long) {
         try {
             dao.likeById(id)
-            val response = PostsApi.retrofitService.likeByIdAsync(id)
+            val response = postApi.likeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
@@ -111,7 +116,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
     override suspend fun unlikeById(id: Long) {
         try {
             dao.likeById(id)
-            val response = PostsApi.retrofitService.unlikeByIdAsync(id)
+            val response = postApi.unlikeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
@@ -128,7 +133,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun removeById(id: Long) {
         try {
-            val response = PostsApi.retrofitService.removeByIdAsync(id)
+            val response = postApi.removeByIdAsync(id)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
@@ -142,7 +147,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun save(post: Post) {
         try {
-            val response = PostsApi.retrofitService.saveAsync(post)
+            val response = postApi.saveAsync(post)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
@@ -164,7 +169,7 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
             val media = mediaResponse.body() ?: throw ApiException(mediaResponse.code(), mediaResponse.message())
 
-            val response = PostsApi.retrofitService.saveAsync(post.copy(attachment = Attachment(media.id, TypeAttachment.IMAGE)))
+            val response = postApi.saveAsync(post.copy(attachment = Attachment(media.id, TypeAttachment.IMAGE)))
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
@@ -179,17 +184,17 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     private suspend fun saveMedia(file: File): Response<Media> {
         val part = MultipartBody.Part.createFormData("file", file.name, file.asRequestBody())
-        return PostsApi.retrofitService.saveMedia(part)
+        return postApi.saveMedia(part)
     }
 
     override suspend fun signIn(login: String, pass: String) {
         try {
-            val response = PostsApi.retrofitService.updateUser(login, pass)
+            val response = postApi.updateUser(login, pass)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
             val authState = response.body() ?: throw ApiException(response.code(), response.message())
-            authState.token?.let { AppAuth.getInstance().setAuth(authState.id, it) }
+            authState.token?.let { appAuth.setAuth(authState.id, it) }
 
         } catch (e: IOException) {
             throw NetworkException
@@ -201,12 +206,12 @@ class PostRepositoryOkHTTTP(private val dao: PostDao) : PostRepository {
 
     override suspend fun signUp(name: String, login: String, pass: String) {
         try {
-            val response = PostsApi.retrofitService.registerUser(login, pass, name)
+            val response = postApi.registerUser(login, pass, name)
             if (!response.isSuccessful) {
                 throw ApiException(response.code(), response.message())
             }
             val authState = response.body() ?: throw ApiException(response.code(), response.message())
-            authState.token?.let { AppAuth.getInstance().setAuth(authState.id, it) }
+            authState.token?.let { appAuth.setAuth(authState.id, it) }
 
         } catch (e: IOException) {
             throw NetworkException

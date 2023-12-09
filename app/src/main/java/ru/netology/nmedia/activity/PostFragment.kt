@@ -10,6 +10,7 @@ import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.nmedia.R
 import ru.netology.nmedia.activity.EditPostFragment.Companion.textArg
 import ru.netology.nmedia.adapter.OnInteractionListener
@@ -19,7 +20,7 @@ import ru.netology.nmedia.databinding.FragmentPostBinding
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.util.LongArg
 import ru.netology.nmedia.viewmodel.PostViewModel
-
+@AndroidEntryPoint
 class PostFragment : Fragment() {
     companion object {
         var Bundle.idArg by LongArg

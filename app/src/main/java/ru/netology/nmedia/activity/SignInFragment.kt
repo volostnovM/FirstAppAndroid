@@ -13,11 +13,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.nmedia.R
 import ru.netology.nmedia.auth.AppAuth
 import ru.netology.nmedia.databinding.FragmentSignInBinding
 import ru.netology.nmedia.viewmodel.SignInViewModel
-
+@AndroidEntryPoint
 class SignInFragment: Fragment() {
 
     private val signInViewModel: SignInViewModel by viewModels()

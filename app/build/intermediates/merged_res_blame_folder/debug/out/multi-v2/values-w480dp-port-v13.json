@@ -4,7 +4,7 @@
             "outputFile": "ru.netology.nmedia.app-mergeDebugResources-63:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\23a76923d14958b8b0e31c6d737038e8\\transformed\\material-1.9.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\67c5bcffdfb4ff6d228cf43811da7bac\\transformed\\material-1.9.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

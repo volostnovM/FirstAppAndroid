@@ -19,6 +19,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_INDEFINITE
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import ru.netology.nmedia.R
@@ -26,8 +27,13 @@ import ru.netology.nmedia.activity.NewPostFragment.Companion.text
 import ru.netology.nmedia.auth.AppAuth
 import ru.netology.nmedia.databinding.ActivityAppBinding
 import ru.netology.nmedia.viewmodel.AuthViewModel
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AppActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var appAuth: AppAuth
 
     val viewModel by viewModels<AuthViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,7 +106,7 @@ class AppActivity : AppCompatActivity() {
                         AlertDialog.Builder(this@AppActivity).setMessage("Вы уверены?")
                             .setPositiveButton("Выйти"
                             ) { _, _ ->
-                                AppAuth.getInstance().removeAuth()
+                                appAuth.removeAuth()
                                 findNavController(R.id.nav_host_fragment).navigateUp()
                             }
                             .setNegativeButton("Остаться"
@@ -115,8 +121,6 @@ class AppActivity : AppCompatActivity() {
                 }
             }
         })
-
-
         requestNotificationsPermission()
     }
 

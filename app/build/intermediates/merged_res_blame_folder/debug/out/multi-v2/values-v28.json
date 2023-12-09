@@ -4,7 +4,7 @@
             "outputFile": "ru.netology.nmedia.app-mergeDebugResources-63:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\23a76923d14958b8b0e31c6d737038e8\\transformed\\material-1.9.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\67c5bcffdfb4ff6d228cf43811da7bac\\transformed\\material-1.9.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\d2b449642b4f4e20b55c0d4dfa32b0cf\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\3636a66c95f44e7e2f7f4dfb5558db41\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

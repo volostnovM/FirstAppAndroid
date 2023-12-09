@@ -57,35 +57,3 @@ interface PostsApiService {
     @POST("users/push-tokens")
     suspend fun sendPushToken(@Body token: PushToken): Response<Unit>
 }
-
-val logger = HttpLoggingInterceptor().apply {
-    if (BuildConfig.DEBUG) {
-        level = HttpLoggingInterceptor.Level.BODY
-    }
-}
-
-val client = OkHttpClient.Builder()
-    .addInterceptor {chain ->  
-        AppAuth.getInstance().authState.value.token?.let {token ->
-            val newRequest = chain.request().newBuilder()
-                .addHeader("Authorization", token)
-                .build()
-            return@addInterceptor chain.proceed(newRequest)
-        }
-        chain.proceed(chain.request())
-    }
-    .addInterceptor(logger)
-    .build()
-
-
-val retrofit = Retrofit.Builder()
-    .baseUrl(BASE_URL)
-    .client(client)
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
-
-object PostsApi {
-    val retrofitService by lazy {
-        retrofit.create(PostsApiService::class.java)
-    }
-}
