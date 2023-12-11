@@ -18,6 +18,10 @@ import javax.inject.Singleton
 @Module
 class ApiModule {
 
+    companion object {
+        private const val BASE_URL = "${BuildConfig.BASE_URL}/api/slow/"
+    }
+
     @Provides
     @Singleton
     fun provideLogging(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {

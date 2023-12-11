@@ -22,8 +22,6 @@ import ru.netology.nmedia.dto.Media
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.dto.PushToken
 
-private const val BASE_URL = "${BuildConfig.BASE_URL}/api/slow/"
-
 interface PostsApiService {
     @GET("posts")
     suspend fun getAll(): Response<List<Post>>
