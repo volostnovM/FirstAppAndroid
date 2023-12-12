@@ -14,11 +14,16 @@ import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.util.SingleLiveEvent
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.switchMap
+import androidx.paging.PagingData
+import androidx.paging.map
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.switchMap
 import ru.netology.nmedia.auth.AppAuth
 import ru.netology.nmedia.model.PhotoModel
 import java.io.File
@@ -47,28 +52,25 @@ class PostViewModel @Inject constructor (
         get() = _postCreated
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    val data: LiveData<FeedModel> = appAuth
+    val data: Flow<PagingData<Post>> = appAuth
         .authState
         .flatMapLatest {auth ->
             repository.data
                 .map {postsMap ->
-                    FeedModel(
-                        posts = postsMap.map {it.copy(ownedByMe = auth.id == it.authorId)},
-                        empty = postsMap.isEmpty()
-                    )
+                    postsMap.map {it.copy(ownedByMe = auth.id == it.authorId)}
                 }
                 .catch { it.printStackTrace() }
         }
-        .asLiveData(Dispatchers.Default)
+        .flowOn(Dispatchers.Default)
 
     private val _photo = MutableLiveData<PhotoModel?>(null)
     val photo: LiveData<PhotoModel?> get() = _photo
 
-    val newerCount = data.switchMap {
-        repository.getNewer(it.posts.firstOrNull()?.id ?: 0L)
-            .catch { it.printStackTrace() }
-            .asLiveData(Dispatchers.Default)
-    }
+//    val newerCount = data.switchMap {
+//        repository.getNewer(it.posts.firstOrNull()?.id ?: 0L)
+//            .catch { it.printStackTrace() }
+//            .asLiveData(Dispatchers.Default)
+//    }
 
 
     private val edited = MutableLiveData(empty)

@@ -1,6 +1,9 @@
 package ru.netology.nmedia.repository
 
 import androidx.lifecycle.map
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -38,9 +41,14 @@ class PostRepositoryOkHTTTP @Inject constructor (
         private val jsonType = "application/json".toMediaType()
     }
 
-    override val data = dao.getAll().map {
-        it.toDto()
-    }
+    override val data: Flow<PagingData<Post>> = Pager(
+        config = PagingConfig(pageSize = 10, enablePlaceholders = false),
+        pagingSourceFactory = {
+            PostPagingSourse(
+                postApi
+            )
+        }
+    ).flow
 
     override suspend fun getAll() {
         try {
@@ -49,7 +57,6 @@ class PostRepositoryOkHTTTP @Inject constructor (
                 throw ApiException(response.code(), response.message())
             }
             val body = response.body() ?: throw ApiException(response.code(), response.message())
-            //dao.insert(body.toEntity())
             dao.insert(body.toEntity()
                 .map {
                     it.copy(hidden = true)

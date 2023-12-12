@@ -10,10 +10,16 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import ru.netology.nmedia.activity.EditPostFragment.Companion.textArg
 import ru.netology.nmedia.activity.PostFragment.Companion.idArg
 import ru.netology.nmedia.adapter.OnInteractionListener
@@ -39,14 +45,13 @@ class FeedFragment : Fragment() {
 
         val adapter = PostsAdapter(object : OnInteractionListener {
             override fun like(post: Post) {
-                if(viewModelAuth.authenticated) {
+                if (viewModelAuth.authenticated) {
                     if (post.likedByMe) {
                         viewModel.unlikeById(post.id)
                     } else {
                         viewModel.likeById(post.id)
                     }
-                } else
-                {
+                } else {
                     findNavController().navigate(R.id.signInFragment)
                 }
             }
@@ -105,14 +110,12 @@ class FeedFragment : Fragment() {
 
         binding.recyclerList.adapter = adapter
 
-        viewModel.data.observe(viewLifecycleOwner) { state ->
-            val newPost = state.posts.size > adapter.currentList.size
-            adapter.submitList(state.posts) {
-                if (newPost) {
-                    binding.recyclerList.smoothScrollToPosition(0)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.data.collectLatest {
+                    adapter.submitData(it)
                 }
             }
-            binding.emptyTextView.isVisible = state.empty
         }
 
         viewModel.state.observe(viewLifecycleOwner) { state ->
@@ -147,11 +150,11 @@ class FeedFragment : Fragment() {
             }
         }
 
-        viewModel.newerCount.observe(viewLifecycleOwner) {
-            if (it > 0) {
-                binding.newPosts.visibility = View.VISIBLE
-            }
-        }
+//        viewModel.newerCount.observe(viewLifecycleOwner) {
+//            if (it > 0) {
+//                binding.newPosts.visibility = View.VISIBLE
+//            }
+//        }
 
         binding.newPosts.setOnClickListener {
             binding.newPosts.visibility = View.GONE
@@ -162,15 +165,25 @@ class FeedFragment : Fragment() {
             viewModel.loadPosts()
         }
 
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                adapter.loadStateFlow.collectLatest { state ->
+                    binding.swipeRefresh.isRefreshing =
+                        state.refresh is LoadState.Loading ||
+                                state.prepend is LoadState.Loading ||
+                                state.append is LoadState.Loading
+                }
+            }
+        }
+
         binding.swipeRefresh.setOnRefreshListener {
-            viewModel.refreshPosts()
+            adapter.refresh()
         }
 
         binding.fab.setOnClickListener {
-            if(viewModelAuth.authenticated) {
+            if (viewModelAuth.authenticated) {
                 findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)
-            }
-            else {
+            } else {
                 findNavController().navigate(R.id.signInFragment)
             }
         }

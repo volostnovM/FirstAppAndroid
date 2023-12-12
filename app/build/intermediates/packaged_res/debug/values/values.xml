@@ -36,6 +36,7 @@
     <string name="google_api_key" translatable="false">AIzaSyA3ATpDCQcrLyECv1v6q6lmDW8FzyrJpZM</string>
     <string name="google_app_id" translatable="false">1:610441040419:android:4f1648ebb05016a6531796</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA3ATpDCQcrLyECv1v6q6lmDW8FzyrJpZM</string>
+    <string name="google_play_unavailable">google play unavailable</string>
     <string name="google_storage_bucket" translatable="false">nmedia-56e4e.appspot.com</string>
     <string name="icon_edit">icon_edit</string>
     <string name="icon_like">icon like</string>
