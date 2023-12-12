@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_sign_out.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_sign_out.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_sign_up.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_sign_up.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_image.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_image.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_edit_post.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_edit_post.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_sign_in.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_sign_in.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/card_post.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/card_post.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_new_post.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_new_post.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_post.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_post.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/fragment_feed.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/fragment_feed.xml"
+    },
+    {
+        "merged": "ru.netology.nmedia.app-mergeDebugResources-64:/layout/activity_app.xml",
+        "source": "ru.netology.nmedia.app-main-67:/layout/activity_app.xml"
+    }
+]
