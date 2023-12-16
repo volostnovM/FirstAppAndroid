@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-63:/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "ru.netology.nmedia.app-mergeDebugResources-66:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\3636a66c95f44e7e2f7f4dfb5558db41\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",

@@ -66,13 +66,6 @@ class PostViewModel @Inject constructor (
     private val _photo = MutableLiveData<PhotoModel?>(null)
     val photo: LiveData<PhotoModel?> get() = _photo
 
-//    val newerCount = data.switchMap {
-//        repository.getNewer(it.posts.firstOrNull()?.id ?: 0L)
-//            .catch { it.printStackTrace() }
-//            .asLiveData(Dispatchers.Default)
-//    }
-
-
     private val edited = MutableLiveData(empty)
 
     private val _dataState = MutableLiveData<FeedModelState>()
@@ -100,25 +93,25 @@ class PostViewModel @Inject constructor (
         edited.value = edited.value?.copy(attachment = null)
     }
 
-    fun loadNewPosts() = viewModelScope.launch {
-        try {
-            _dataState.value = FeedModelState(loading = true)
-            repository.getNewPosts()
-            _dataState.value = FeedModelState()
-        } catch (e: Exception) {
-            _dataState.value = FeedModelState(error = true)
-        }
-    }
+//    fun loadNewPosts() = viewModelScope.launch {
+//        try {
+//            _dataState.value = FeedModelState(loading = true)
+//            repository.getNewPosts()
+//            _dataState.value = FeedModelState()
+//        } catch (e: Exception) {
+//            _dataState.value = FeedModelState(error = true)
+//        }
+//    }
 
-    fun refreshPosts() = viewModelScope.launch {
-        try {
-            _dataState.value = FeedModelState(refreshing = true)
-            repository.getAll()
-            _dataState.value = FeedModelState()
-        } catch (e: Exception) {
-            _dataState.value = FeedModelState(error = true)
-        }
-    }
+//    fun refreshPosts() = viewModelScope.launch {
+//        try {
+//            _dataState.value = FeedModelState(refreshing = true)
+//            repository.getAll()
+//            _dataState.value = FeedModelState()
+//        } catch (e: Exception) {
+//            _dataState.value = FeedModelState(error = true)
+//        }
+//    }
 
     fun changeContentAndSave(content: String) {
         edited.value?.let {

@@ -1,17 +1,20 @@
 package ru.netology.nmedia.dao;
 
 import android.database.Cursor;
+import androidx.paging.PagingSource;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
+import androidx.room.paging.LimitOffsetPagingSource;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
 import java.lang.Exception;
 import java.lang.IllegalArgumentException;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -40,6 +43,8 @@ public final class PostDao_Impl implements PostDao {
   private final SharedSQLiteStatement __preparedStmtOfLikeById;
 
   private final SharedSQLiteStatement __preparedStmtOfRemoveById;
+
+  private final SharedSQLiteStatement __preparedStmtOfClear;
 
   public PostDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -129,10 +134,17 @@ public final class PostDao_Impl implements PostDao {
         return _query;
       }
     };
+    this.__preparedStmtOfClear = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM PostEntity";
+        return _query;
+      }
+    };
   }
 
   @Override
-  public Object insert(final PostEntity post, final Continuation<? super Unit> $completion) {
+  public Object insert(final PostEntity post, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -145,11 +157,11 @@ public final class PostDao_Impl implements PostDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object insert(final List<PostEntity> post, final Continuation<? super Unit> $completion) {
+  public Object insert(final List<PostEntity> post, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -162,11 +174,11 @@ public final class PostDao_Impl implements PostDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object hiddenPosts(final Continuation<? super Unit> $completion) {
+  public Object hiddenPosts(final Continuation<? super Unit> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -181,12 +193,12 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfHiddenPosts.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg0);
   }
 
   @Override
   public Object updateContentById(final long id, final String text,
-      final Continuation<? super Unit> $completion) {
+      final Continuation<? super Unit> arg2) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -209,11 +221,11 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfUpdateContentById.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg2);
   }
 
   @Override
-  public Object likeById(final long id, final Continuation<? super Unit> $completion) {
+  public Object likeById(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -230,11 +242,11 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfLikeById.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object removeById(final long id, final Continuation<? super Unit> $completion) {
+  public Object removeById(final long id, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -251,7 +263,26 @@ public final class PostDao_Impl implements PostDao {
           __preparedStmtOfRemoveById.release(_stmt);
         }
       }
-    }, $completion);
+    }, arg1);
+  }
+
+  @Override
+  public Object clear(final Continuation<? super Unit> arg0) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfClear.acquire();
+        __db.beginTransaction();
+        try {
+          _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfClear.release(_stmt);
+        }
+      }
+    }, arg0);
   }
 
   @Override
@@ -346,8 +377,89 @@ public final class PostDao_Impl implements PostDao {
   }
 
   @Override
-  public Object save(final PostEntity post, final Continuation<? super Unit> $completion) {
-    return PostDao.DefaultImpls.save(PostDao_Impl.this, post, $completion);
+  public PagingSource<Integer, PostEntity> getPagingSource() {
+    final String _sql = "SELECT * FROM PostEntity ORDER BY id DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return new LimitOffsetPagingSource<PostEntity>(_statement, __db, "PostEntity") {
+      @Override
+      protected List<PostEntity> convertRows(Cursor cursor) {
+        final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(cursor, "id");
+        final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(cursor, "author");
+        final int _cursorIndexOfAuthorAvatar = CursorUtil.getColumnIndexOrThrow(cursor, "authorAvatar");
+        final int _cursorIndexOfPublished = CursorUtil.getColumnIndexOrThrow(cursor, "published");
+        final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(cursor, "content");
+        final int _cursorIndexOfLikedByMe = CursorUtil.getColumnIndexOrThrow(cursor, "likedByMe");
+        final int _cursorIndexOfLikes = CursorUtil.getColumnIndexOrThrow(cursor, "likes");
+        final int _cursorIndexOfHidden = CursorUtil.getColumnIndexOrThrow(cursor, "hidden");
+        final int _cursorIndexOfAuthorId = CursorUtil.getColumnIndexOrThrow(cursor, "authorId");
+        final int _cursorIndexOfUrl = CursorUtil.getColumnIndexOrThrow(cursor, "url");
+        final int _cursorIndexOfType = CursorUtil.getColumnIndexOrThrow(cursor, "type");
+        final List<PostEntity> _result = new ArrayList<PostEntity>(cursor.getCount());
+        while(cursor.moveToNext()) {
+          final PostEntity _item;
+          final long _tmpId;
+          _tmpId = cursor.getLong(_cursorIndexOfId);
+          final String _tmpAuthor;
+          if (cursor.isNull(_cursorIndexOfAuthor)) {
+            _tmpAuthor = null;
+          } else {
+            _tmpAuthor = cursor.getString(_cursorIndexOfAuthor);
+          }
+          final String _tmpAuthorAvatar;
+          if (cursor.isNull(_cursorIndexOfAuthorAvatar)) {
+            _tmpAuthorAvatar = null;
+          } else {
+            _tmpAuthorAvatar = cursor.getString(_cursorIndexOfAuthorAvatar);
+          }
+          final String _tmpPublished;
+          if (cursor.isNull(_cursorIndexOfPublished)) {
+            _tmpPublished = null;
+          } else {
+            _tmpPublished = cursor.getString(_cursorIndexOfPublished);
+          }
+          final String _tmpContent;
+          if (cursor.isNull(_cursorIndexOfContent)) {
+            _tmpContent = null;
+          } else {
+            _tmpContent = cursor.getString(_cursorIndexOfContent);
+          }
+          final boolean _tmpLikedByMe;
+          final int _tmp;
+          _tmp = cursor.getInt(_cursorIndexOfLikedByMe);
+          _tmpLikedByMe = _tmp != 0;
+          final int _tmpLikes;
+          _tmpLikes = cursor.getInt(_cursorIndexOfLikes);
+          final boolean _tmpHidden;
+          final int _tmp_1;
+          _tmp_1 = cursor.getInt(_cursorIndexOfHidden);
+          _tmpHidden = _tmp_1 != 0;
+          final long _tmpAuthorId;
+          _tmpAuthorId = cursor.getLong(_cursorIndexOfAuthorId);
+          final Attachment _tmpAttachment;
+          if (!(cursor.isNull(_cursorIndexOfUrl) && cursor.isNull(_cursorIndexOfType))) {
+            final String _tmpUrl;
+            if (cursor.isNull(_cursorIndexOfUrl)) {
+              _tmpUrl = null;
+            } else {
+              _tmpUrl = cursor.getString(_cursorIndexOfUrl);
+            }
+            final TypeAttachment _tmpType;
+            _tmpType = __TypeAttachment_stringToEnum(cursor.getString(_cursorIndexOfType));
+            _tmpAttachment = new Attachment(_tmpUrl,_tmpType);
+          } else {
+            _tmpAttachment = null;
+          }
+          _item = new PostEntity(_tmpId,_tmpAuthor,_tmpAuthorAvatar,_tmpPublished,_tmpContent,_tmpLikedByMe,_tmpLikes,_tmpHidden,_tmpAttachment,_tmpAuthorId);
+          _result.add(_item);
+        }
+        return _result;
+      }
+    };
+  }
+
+  @Override
+  public Object save(final PostEntity post, final Continuation<? super Unit> arg1) {
+    return PostDao.DefaultImpls.save(PostDao_Impl.this, post, arg1);
   }
 
   public static List<Class<?>> getRequiredConverters() {

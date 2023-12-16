@@ -156,10 +156,10 @@ class FeedFragment : Fragment() {
 //            }
 //        }
 
-        binding.newPosts.setOnClickListener {
-            binding.newPosts.visibility = View.GONE
-            viewModel.loadNewPosts()
-        }
+//        binding.newPosts.setOnClickListener {
+//            binding.newPosts.visibility = View.GONE
+//            viewModel.loadNewPosts()
+//        }
 
         binding.retryButton.setOnClickListener {
             viewModel.loadPosts()

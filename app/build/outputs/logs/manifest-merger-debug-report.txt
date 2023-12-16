@@ -84,6 +84,7 @@ INJECTED from C:\Users\Maxim\Desktop\AndroidStudioProjects\FirstProject\app\src\
 MERGED from [androidx.databinding:viewbinding:8.0.2] C:\Users\Maxim\.gradle\caches\transforms-3\f58654ae777ec66363dca36418c426e2\transformed\viewbinding-8.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\5c41fdc2c7aad486d46f881c7c00b45e\transformed\imagepicker-2.1\AndroidManifest.xml:2:1-42:12
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\Maxim\.gradle\caches\transforms-3\871cf33f8530333dc3443e167b92d140\transformed\ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.room:room-paging:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\d129dd5b8b932e7283ec9119b1fc0bd0\transformed\room-paging-2.5.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\a84e3a2e913118a06d924d8075819f32\transformed\room-ktx-2.5.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\Maxim\.gradle\caches\transforms-3\1c1d2628d570a9d792f4042e90ff42aa\transformed\navigation-common-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.6.0] C:\Users\Maxim\.gradle\caches\transforms-3\0fb87eaf97b35239621bb49800ed36c2\transformed\navigation-common-ktx-2.6.0\AndroidManifest.xml:17:1-22:12
@@ -102,6 +103,8 @@ MERGED from [com.google.firebase:firebase-messaging:23.2.1] C:\Users\Maxim\.grad
 MERGED from [com.google.android.gms:play-services-base:18.2.0] C:\Users\Maxim\.gradle\caches\transforms-3\a7da45ef88395e3e88d06a8a25b78571\transformed\play-services-base-18.2.0\AndroidManifest.xml:16:1-24:12
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Maxim\.gradle\caches\transforms-3\2c4279e0bf2dee08bb3a8f6f2d152d1d\transformed\glide-4.16.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.dagger:hilt-android:2.48.1] C:\Users\Maxim\.gradle\caches\transforms-3\0f1a5fb796c3154c2419182599aed537\transformed\hilt-android-2.48.1\AndroidManifest.xml:16:1-19:12
+MERGED from [androidx.paging:paging-runtime-ktx:3.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\d94207af03484e38d1cc1e890274aae0\transformed\paging-runtime-ktx-3.2.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.paging:paging-runtime:3.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\265e63b08412a29ce10a2d303354b791\transformed\paging-runtime-3.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Maxim\.gradle\caches\transforms-3\97e0da00666dc3399f87df987afcb9a7\transformed\recyclerview-1.3.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Maxim\.gradle\caches\transforms-3\14014fea1163513cd33b580cbbe6e6dd\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Maxim\.gradle\caches\transforms-3\97fbc5c0c090fbf2aabae1a6298a1c98\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -220,6 +223,8 @@ MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\cache
 MERGED from [com.github.dhaval2404:imagepicker:2.1] C:\Users\Maxim\.gradle\caches\transforms-3\5c41fdc2c7aad486d46f881c7c00b45e\transformed\imagepicker-2.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\Maxim\.gradle\caches\transforms-3\871cf33f8530333dc3443e167b92d140\transformed\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\Maxim\.gradle\caches\transforms-3\871cf33f8530333dc3443e167b92d140\transformed\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.room:room-paging:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\d129dd5b8b932e7283ec9119b1fc0bd0\transformed\room-paging-2.5.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-paging:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\d129dd5b8b932e7283ec9119b1fc0bd0\transformed\room-paging-2.5.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\a84e3a2e913118a06d924d8075819f32\transformed\room-ktx-2.5.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\Maxim\.gradle\caches\transforms-3\a84e3a2e913118a06d924d8075819f32\transformed\room-ktx-2.5.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\Maxim\.gradle\caches\transforms-3\1c1d2628d570a9d792f4042e90ff42aa\transformed\navigation-common-2.6.0\AndroidManifest.xml:20:5-44
@@ -256,6 +261,10 @@ MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Maxim\.gradle\cach
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Maxim\.gradle\caches\transforms-3\2c4279e0bf2dee08bb3a8f6f2d152d1d\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.dagger:hilt-android:2.48.1] C:\Users\Maxim\.gradle\caches\transforms-3\0f1a5fb796c3154c2419182599aed537\transformed\hilt-android-2.48.1\AndroidManifest.xml:18:3-42
 MERGED from [com.google.dagger:hilt-android:2.48.1] C:\Users\Maxim\.gradle\caches\transforms-3\0f1a5fb796c3154c2419182599aed537\transformed\hilt-android-2.48.1\AndroidManifest.xml:18:3-42
+MERGED from [androidx.paging:paging-runtime-ktx:3.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\d94207af03484e38d1cc1e890274aae0\transformed\paging-runtime-ktx-3.2.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.paging:paging-runtime-ktx:3.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\d94207af03484e38d1cc1e890274aae0\transformed\paging-runtime-ktx-3.2.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.paging:paging-runtime:3.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\265e63b08412a29ce10a2d303354b791\transformed\paging-runtime-3.2.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.paging:paging-runtime:3.2.1] C:\Users\Maxim\.gradle\caches\transforms-3\265e63b08412a29ce10a2d303354b791\transformed\paging-runtime-3.2.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Maxim\.gradle\caches\transforms-3\97e0da00666dc3399f87df987afcb9a7\transformed\recyclerview-1.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Maxim\.gradle\caches\transforms-3\97e0da00666dc3399f87df987afcb9a7\transformed\recyclerview-1.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Maxim\.gradle\caches\transforms-3\14014fea1163513cd33b580cbbe6e6dd\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
