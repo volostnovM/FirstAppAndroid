@@ -4,7 +4,7 @@
             "outputFile": "ru.netology.nmedia.app-mergeDebugResources-66:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Max\\.gradle\\caches\\transforms-3\\3636a66c95f44e7e2f7f4dfb5558db41\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\Maxim\\.gradle\\caches\\transforms-3\\3636a66c95f44e7e2f7f4dfb5558db41\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

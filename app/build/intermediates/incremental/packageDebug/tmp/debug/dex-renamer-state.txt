@@ -1,20 +1,20 @@
-#Tue Dec 19 16:20:00 MSK 2023
-base.0=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-base.11=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
-base.12=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.13=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.14=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.15=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.2=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.4=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.5=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.6=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.7=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.8=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.9=D\:\\Homework_Netology\\FirstAppAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
+#Tue Dec 19 20:38:17 MSK 2023
+base.0=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.10=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.11=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.12=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.13=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.14=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.15=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.2=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.4=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.5=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.6=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.7=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.8=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.9=C\:\\Users\\Maxim\\Desktop\\AndroidStudioProjects\\FirstProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=5/classes.dex

@@ -4091,6 +4091,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_cancel
 string add_post
+string advertising
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior

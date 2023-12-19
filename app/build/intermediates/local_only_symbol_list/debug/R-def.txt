@@ -136,6 +136,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation navig_main
 string add_post
+string advertising
 string app_name
 string avatar
 string cancel

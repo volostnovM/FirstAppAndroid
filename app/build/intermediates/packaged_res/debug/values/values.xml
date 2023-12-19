@@ -16,6 +16,7 @@
     <dimen name="icon_padding">8dp</dimen>
     <dimen name="size_icon">24dp</dimen>
     <string name="add_post">add post</string>
+    <string name="advertising">advertising</string>
     <string name="app_name">FirstProject</string>
     <string name="avatar">avatar</string>
     <string name="cancel">cancel</string>

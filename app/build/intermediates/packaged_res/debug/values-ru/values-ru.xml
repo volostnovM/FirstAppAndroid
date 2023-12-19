@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="add_post">Добавить пост</string>
+    <string name="advertising">Реклама</string>
     <string name="app_name">Первый проект</string>
     <string name="avatar">аватар</string>
     <string name="cancel">Отмена</string>
