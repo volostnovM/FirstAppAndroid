@@ -25,6 +25,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.switchMap
 import ru.netology.nmedia.auth.AppAuth
+import ru.netology.nmedia.dto.FeedItem
 import ru.netology.nmedia.model.PhotoModel
 import java.io.File
 import javax.inject.Inject
@@ -52,12 +53,17 @@ class PostViewModel @Inject constructor (
         get() = _postCreated
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    val data: Flow<PagingData<Post>> = appAuth
+    val data: Flow<PagingData<FeedItem>> = appAuth
         .authState
         .flatMapLatest {auth ->
-            repository.data
-                .map {postsMap ->
-                    postsMap.map {it.copy(ownedByMe = auth.id == it.authorId)}
+            repository.data.map {pagingData ->
+                pagingData.map { post ->
+                        if (post is Post) {
+                            post.copy(ownedByMe = auth.id == post.authorId)
+                        } else {
+                            post
+                        }
+                    }
                 }
                 .catch { it.printStackTrace() }
         }

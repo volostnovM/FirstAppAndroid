@@ -118,6 +118,7 @@ id username_reg_input
 id viewButton
 id viewText
 layout activity_app
+layout card_ad
 layout card_post
 layout fragment_edit_post
 layout fragment_feed
@@ -127,6 +128,7 @@ layout fragment_post
 layout fragment_sign_in
 layout fragment_sign_out
 layout fragment_sign_up
+layout item_loading
 menu menu_main
 menu menu_options
 menu save_post

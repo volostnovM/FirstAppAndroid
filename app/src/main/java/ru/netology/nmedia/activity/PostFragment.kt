@@ -24,6 +24,7 @@ import ru.netology.nmedia.databinding.FragmentPostBinding
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.util.LongArg
 import ru.netology.nmedia.viewmodel.PostViewModel
+
 @AndroidEntryPoint
 class PostFragment : Fragment() {
     companion object {
@@ -44,7 +45,7 @@ class PostFragment : Fragment() {
             binding.postFragment.apply {
                 viewModel.data.map { posts ->
                     posts.map { post ->
-                        if (post.id == id) {
+                        if (post is Post && post.id == id) {
                             PostViewHolder(this, object : OnInteractionListener {
 
                                 override fun like(post: Post) {
@@ -101,7 +102,6 @@ class PostFragment : Fragment() {
                 }
             }
         }
-
         return binding.root
     }
 }
