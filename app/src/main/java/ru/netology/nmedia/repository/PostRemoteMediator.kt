@@ -31,6 +31,7 @@ class PostRemoteMediator(
                         service.getAfter(id, state.config.pageSize)
                     } ?: service.getLatest(state.config.initialLoadSize)
                 }
+
                 LoadType.PREPEND -> {
                     val id = postRemoteKeyDao.max() ?: return MediatorResult.Success(false)
                     service.getAfter(id, state.config.pageSize)
@@ -88,12 +89,10 @@ class PostRemoteMediator(
                         )
                     }
                 }
+                postDao.insert(body.map {
+                    PostEntity.fromDto(it)
+                })
             }
-
-
-            postDao.insert(body.map {
-                PostEntity.fromDto(it)
-            })
 
             return MediatorResult.Success(body.isEmpty())
         } catch (e: Exception) {
