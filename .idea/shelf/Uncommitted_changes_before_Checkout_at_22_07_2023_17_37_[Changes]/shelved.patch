@@ -1,0 +1,17 @@
+Index: app/build/intermediates/packaged_res/debug/values-ru/values-ru.xml
+===================================================================
+diff --git a/app/build/intermediates/packaged_res/debug/values-ru/values-ru.xml b/app/build/intermediates/packaged_res/debug/values-ru/values-ru.xml
+--- a/app/build/intermediates/packaged_res/debug/values-ru/values-ru.xml	
++++ b/app/build/intermediates/packaged_res/debug/values-ru/values-ru.xml	
+@@ -1,5 +1,10 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+     <string name="app_name">Первый проект</string>
++    <string name="avatar">аватар</string>
++    <string name="icon_like">Иконка нравится</string>
++    <string name="icon_share">Иконка поделиться</string>
++    <string name="icon_view">"Иконка просмотров "</string>
++    <string name="menu">меню</string>
+     <string name="nmedia">НМедиа!</string>
+ </resources>
+\ No newline at end of file
